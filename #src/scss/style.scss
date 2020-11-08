@@ -1,0 +1,51 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    background: url("../img/header-bg.jpg") 0 0 no-repeat;
+
+    .logo {}
+
+    .navigation {
+        display: flex;
+
+        @media(max-width: 1000px) {
+            display: table-column;
+        }
+
+        a {
+            font-size: 16px;
+
+            @media(max-width: 1000px) {
+                font-size: 26px;
+            }
+        }
+    }
+}
