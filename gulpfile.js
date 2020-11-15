@@ -1,9 +1,9 @@
 
 
-let project_folder = "dist"
-let source_folder = "#src"
+let project_folder = "dist";
+let source_folder = "#src";
 
-let fs = require('fs')
+let fs = require('fs');
 
 let path = {
     build: {
@@ -17,14 +17,14 @@ let path = {
         html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
         css: source_folder + "/scss/style.scss",
         js: source_folder + "/js/script.js",
-        img: source_folder + "/img/**/*.{jpg, png, svg, gif, ico, webp}",
+        img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
         fonts: source_folder + "/fonts/*.ttf",
     },
     watch: {
         html: source_folder + "/**/*.html",
         css: source_folder + "/scss/**/*.scss",
         js: source_folder + "/js/**/*.js",
-        img: source_folder + "/img/**/*.{jpg, png, svg, gif, ico, webp}",
+        img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}"
     },
     clean: "./" + project_folder + "/"
 }
@@ -123,14 +123,14 @@ function images() {
         .pipe(src(path.src.img))
         .pipe(
             imagemin({
-                interlaced: true,
                 progressive: true,
-                optimizationLevel: 4,
                 svgoPlugins: [
                     {
                         removeViewBox: false
                     }
-                ]
+                ],
+                interlaced: true,
+                optimizationLevel: 4 // 0 to 7
             })
         )
         .pipe(dest(path.build.img))
