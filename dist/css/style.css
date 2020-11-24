@@ -70,22 +70,33 @@ h6 {
 }
 
 .header {
-  position: relative;
-}
-
-.navigation {
   width: 100%;
+  padding-top: 15px;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 500;
-  background-image: url("../img/shape-top.png");
-  background-position: top, bottom;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  right: 0;
+  z-index: 1000;
 }
 
-.navigation .navbar {
+.header.fixed {
+  padding: 10px 0;
+  background-color: #ec908f;
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.header.active {
+  background-color: #ec908f;
+}
+
+.header__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -95,51 +106,32 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px 0;
 }
 
-.navigation .navbar .icon {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 90px;
-          flex: 0 0 90px;
-}
-
-.navigation .navbar .icon img {
-  max-width: 100%;
-}
-
-.navigation .navbar .nav {
+.header__inner .nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   font-size: 16px;
   font-weight: 700;
 }
 
-.navigation .navbar .nav a {
-  margin-left: 50px;
+.header__inner .nav a {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 25px;
+  position: relative;
   color: #54524f;
   text-decoration: none;
+  -webkit-transition: color 0.1s linear;
+  -o-transition: color 0.1s linear;
+  transition: color 0.1s linear;
 }
 
-.navigation .navbar .nav a:first-child {
-  margin-left: 0;
-}
-
-.navigation .navbar .nav.active {
+.header__inner .nav.active {
   display: block;
-}
-
-.fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
 }
 
 .search {
@@ -153,18 +145,15 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   width: 150px;
-  /* Ширина поля с кнопкой */
   border: 1px solid #000;
-  /* Параметры рамки */
   height: 35px;
   min-height: 30px;
-  /* Минимальная высота */
   background-color: #c3bfbc;
   margin: 0 auto;
   border-radius: 50px;
   border: 0;
   outline: none;
-  margin-left: 50px;
+  margin-left: 25px;
 }
 
 .search input {
@@ -195,13 +184,13 @@ h6 {
 /* Nav toggle */
 
 .nav-toggle {
+  display: none;
   width: 30px;
   padding: 10px 0;
-  display: none;
   font-size: 0;
   color: transparent;
   border: 0;
-  background-color: red;
+  background-color: #fff;
   cursor: pointer;
   position: absolute;
   top: 24px;
@@ -213,11 +202,11 @@ h6 {
   outline: 0;
 }
 
-.nav-toggle-item {
+.nav-toggle_item {
   display: block;
   width: 100%;
   height: 3px;
-  background-color: #fff;
+  background-color: #68635f;
   position: absolute;
   top: 0;
   right: 0;
@@ -229,16 +218,12 @@ h6 {
   transition: background 0.2s linear;
 }
 
-.nav-toggle.active .nav-toggle-item {
-  background: none;
-}
-
-.nav-toggle-item:before,
-.nav-toggle-item:after {
+.nav-toggle_item:before,
+.nav-toggle_item:after {
   content: "";
   width: 100%;
   height: 3px;
-  background-color: #fff;
+  background-color: #68635f;
   position: absolute;
   left: 0;
   z-index: 1;
@@ -249,15 +234,19 @@ h6 {
   transition: transform 0.2s linear, -webkit-transform 0.2s linear;
 }
 
-.nav-toggle-item:before {
+.nav-toggle_item:before {
   top: -8px;
 }
 
-.nav-toggle-item:after {
+.nav-toggle_item:after {
   bottom: -8px;
 }
 
-.nav-toggle.active .nav-toggle-item:before {
+.nav-toggle.active .nav-toggle_item {
+  background: none;
+}
+
+.nav-toggle.active .nav-toggle_item:before {
   -webkit-transform-origin: left top;
       -ms-transform-origin: left top;
           transform-origin: left top;
@@ -266,7 +255,7 @@ h6 {
           transform: rotate(45deg) translateX(-2px);
 }
 
-.nav-toggle.active .nav-toggle-item:after {
+.nav-toggle.active .nav-toggle_item:after {
   -webkit-transform-origin: left bottom;
       -ms-transform-origin: left bottom;
           transform-origin: left bottom;
@@ -275,14 +264,27 @@ h6 {
           transform: rotate(-45deg) translateX(-3px);
 }
 
+.test {
+  height: 3000px;
+}
+
 .intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
-  height: 5000px;
-  position: absolute;
-  top: 200px;
-  left: 0;
-  z-index: 5;
-  background-color: aquamarine;
+  height: 100vh;
+  min-height: 800px;
+  position: relative;
+  background: url("../img/header-bg.jpg") center no-repeat;
+  background-size: cover;
 }
 
 .intro__textual {
@@ -369,30 +371,27 @@ main .shape__bg img {
 }
 
 @media (max-width: 770px) {
-  .navigation .navbar {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: baseline;
-        -ms-flex-align: baseline;
-            align-items: baseline;
+  .header {
+    padding: 10px 0;
   }
 
-  .navigation .navbar .nav a {
+  .header__inner .nav a {
     display: block;
     margin: 0;
-    padding: 8px 20px;
+    padding: 10px 20px;
   }
 
-  .navigation .navbar .nav {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: baseline;
-        -ms-flex-align: baseline;
-            align-items: baseline;
+  .header__inner .nav {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ec908f;
+  }
+
+  .search {
+    margin-left: 0;
   }
 
   .nav-toggle {
@@ -439,4 +438,4 @@ main .shape__bg img {
   }
 }
 
-.webp .navigation{ background-image: url(../img/shape-top.webp); }
+.webp .intro{ background: url(../img/header-bg.webp) center no-repeat; }
