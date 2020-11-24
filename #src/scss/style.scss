@@ -67,37 +67,38 @@ h6 {
     }
 }
 
-header {
+.shape__bg {
+    width: 100%;
+    height: 100vh;
+    min-height: 850px;
     position: relative;
 
-    .shape__bg {
+    img {
+        width: 100%;
         height: 100vh;
-        min-height: 850px;
-        position: relative;
+        object-fit: cover;
 
-        img {
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
-
-            @media (min-width: 1000px) {
-                object-fit: fill;
-            }
+        @media (min-width: 1000px) {
+            object-fit: fill;
         }
     }
 
-    .shape {
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-image: url("../img/shape-top.png"), url("../img/shape-down.png");
-        background-position: top, bottom;
-        background-repeat: no-repeat;
-        background-size: 100% 20%, 100% 15%;
-        z-index: 1;
-    }
+    // .shape {
+    //     width: 100%;
+    //     height: 100vh;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     background-image: url("../img/shape-top.png"), url("../img/shape-down.png");
+    //     background-position: top, bottom;
+    //     background-repeat: no-repeat;
+    //     background-size: 100% 20%, 100% 15%;
+    //     z-index: 1;
+    // }
+}
+
+.header {
+    position: relative;
 }
 
 .navigation {
@@ -107,12 +108,29 @@ header {
     left: 0;
     z-index: 500;
 
+    background-image: url("../img/shape-top.png");
+    background-position: top, bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
     .navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 20px 0;
 
+        @media (max-width: 770px) {
+            flex-direction: column;
+            align-items: baseline;
+        }
+
+        .icon {
+            flex: 0 0 90px;
+
+            img {
+                max-width: 100%;
+            }
+        }
 
         .nav {
             display: flex;
@@ -129,12 +147,34 @@ header {
                     margin-left: 0;
                 }
 
-                @media (max-width: 850px) {
-                    display: none;
+                @media (max-width: 770px) {
+                    display: block;
+                    margin: 0;
+                    padding: 8px 20px;
                 }
+            }
+
+            @media (max-width: 770px) {
+                // display: none;
+                flex-direction: column;
+                align-items: baseline;
+            }
+
+            &.active {
+                display: block;
             }
         }
     }
+}
+
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translate3d(0, 0, 0);
 }
 
 // <Search>
@@ -184,13 +224,95 @@ header {
 
 // </Search>
 
+/* Nav toggle */
+.nav-toggle {
+    width: 30px;
+    padding: 10px 0;
+    display: none;
+
+    font-size: 0;
+    color: transparent;
+
+    border: 0;
+    background-color: red; // временно
+    cursor: pointer;
+
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 1000;
+
+    @media (max-width: 770px) {
+        display: block;
+    }
+}
+
+.nav-toggle:focus {
+    outline: 0;
+}
+
+.nav-toggle-item {
+    display: block;
+    width: 100%;
+    height: 3px;
+
+    background-color: #fff;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    transition: background 0.2s linear;
+}
+
+.nav-toggle.active .nav-toggle-item {
+    background: none;
+}
+
+.nav-toggle-item:before,
+.nav-toggle-item:after {
+    content: "";
+    width: 100%;
+    height: 3px;
+
+    background-color: #fff;
+
+    position: absolute;
+    left: 0;
+    z-index: 1;
+
+    transition: transform 0.2s linear;
+}
+
+.nav-toggle-item:before {
+    top: -8px;
+}
+
+.nav-toggle-item:after {
+    bottom: -8px;
+}
+
+.nav-toggle.active .nav-toggle-item:before {
+    transform-origin: left top;
+    transform: rotate(45deg) translateX(-2px);
+}
+
+.nav-toggle.active .nav-toggle-item:after {
+    transform-origin: left bottom;
+    transform: rotate(-45deg) translateX(-3px);
+}
+
 .intro {
     width: 100%;
-    height: 500px;
+    height: 5000px;
     position: absolute;
     top: 200px;
     left: 0;
     z-index: 5;
+    background-color: aquamarine;
 }
 
 .intro__textual {
@@ -280,18 +402,5 @@ main {
                 object-fit: fill;
             }
         }
-    }
-
-    .shape {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-image: url("../img/shape-top.png"), url("../img/shape-down.png");
-        background-position: top, bottom;
-        background-repeat: no-repeat;
-        background-size: 100% 20%, 100% 15%;
-        z-index: 3;
     }
 }
