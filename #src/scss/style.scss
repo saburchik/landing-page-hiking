@@ -61,9 +61,14 @@ h6 {
         background-color: #deb37e;
     }
 
-    @media (max-width: 500px) {
-        width: 170px;
-        font-size: 20px;
+    @media (max-width: 740px) {
+        width: 200px;
+        font-size: 16px;
+    }
+
+    @media (max-width: 740px) {
+        width: 150px;
+        font-size: 14px;
     }
 }
 
@@ -305,75 +310,95 @@ h6 {
 .intro__textual {
     width: 50%;
     max-width: 805px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: baseline;
     position: relative;
     z-index: 50;
 
     .intro__main {
         color: #deb37e;
-        font-size: 5.75rem;
+        font-size: 5.75em;
         font-weight: 800;
         font-family: 'Open Sans', sans-serif;
         text-shadow: 3px -5px 10px #d3d2cd;
+        margin-top: 55px;
 
-        @media (max-width: 1150px) {
-            font-size: 4.75rem;
+        @media (max-height: 668px) {
+            margin: 0;
         }
 
-        @media (max-width: 950px) {
-            font-size: 3.75rem;
+        @media (max-width: 1135px) {
+            font-size: 5em;
         }
 
-        @media (max-width: 650px) {
-            font-size: 2.75rem;
+        @media (max-width: 990px) {
+            font-size: 4.5em;
+            margin-top: 35px;
         }
 
-        @media (max-width: 470px) {
-            font-size: 2rem;
+        @media (max-width: 895px) {
+            font-size: 3.7em;
+        }
+
+        @media (max-width: 740px) {
+            font-size: 2.7em;
+        }
+
+        @media (max-width: 550px) {
+            font-size: 2em;
+        }
+
+        @media (max-width: 340px) {
+            font-size: 1.5em;
         }
     }
 
     .intro__title {
         color: #54524f;
-        font-size: 1.5rem;
+        font-size: 1.5em;
         font-weight: 700;
         font-family: 'Open Sans', sans-serif;
         font-style: italic;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
 
-        @media (max-width: 650px) {
-            font-size: 1.3rem;
-            margin-bottom: 60px;
+        @media (max-width: 895px) {
+            font-size: 1.1em;
         }
 
-        @media (max-width: 650px) {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+        @media (max-width: 550px) {
+            font-size: 0.8em;
+            margin: 15px 0 20px 0;
         }
     }
 
     .intro__text {
         color: #54524f;
-        font-size: 1.3rem;
+        font-size: 1.3em;
         font-family: 'Open Sans', sans-serif;
         font-style: italic;
-        margin-top: 30px;
+        margin: 30px 0 0 0;
 
-        @media (max-width: 650px) {
-            font-size: 1.1rem;
-            margin-top: 50px;
+        @media (max-width: 895px) {
+            font-size: 1em;
         }
 
-        @media (max-width: 470px) {
-            font-size: 1rem;
-            margin-top: 20px;
+        @media (max-width: 550px) {
+            font-size: 0.8em;
+            margin: 20px 0 0 0;
+            width: 80%;
         }
+    }
+
+    @media (max-width: 895px) {
+        margin-top: 50px;
     }
 }
 
 .img {
     width: 100%;
     height: 100vh;
-    min-height: 700px;
+    min-height: 667px;
     position: absolute;
     top: 0;
     right: 0;
@@ -385,10 +410,10 @@ h6 {
     }
 }
 
-.frame-top {
+.frame-main {
     width: 100%;
     height: 100vh;
-    min-height: 700px;
+    min-height: 667px;
     position: absolute;
     top: 0;
     left: 0;
