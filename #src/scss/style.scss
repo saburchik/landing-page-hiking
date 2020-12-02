@@ -42,6 +42,48 @@ h6 {
     padding: 0 15px;
 }
 
+.image {
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    object-fit: cover;
+
+    @media (min-width: 1000px) {
+        object-fit: fill;
+    }
+}
+
+.frame-main {
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../img/shape-top.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100% 17%;
+    z-index: 5;
+}
+
+.frame-down {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-image: url("../img/shape-down.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 12%;
+    z-index: 5;
+}
+
 .button-small {
     width: 220px;
     color: #776c64;
@@ -106,7 +148,13 @@ h6 {
     justify-content: space-between;
     align-items: center;
 
-    .header__logo {}
+    .header__logo {
+        flex: 0 0 75px;
+
+        img {
+            max-width: 100%;
+        }
+    }
 
     .nav {
         display: flex;
@@ -292,16 +340,12 @@ h6 {
     transform: rotate(-45deg) translateX(-3px);
 }
 
-.test {
-    height: 3000px;
-    background-color: lemonchiffon;
-}
-
 
 
 
 
 .intro {
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -322,11 +366,6 @@ h6 {
         font-weight: 800;
         font-family: 'Open Sans', sans-serif;
         text-shadow: 3px -5px 10px #d3d2cd;
-        margin-top: 55px;
-
-        @media (max-height: 668px) {
-            margin: 0;
-        }
 
         @media (max-width: 1135px) {
             font-size: 5em;
@@ -334,7 +373,6 @@ h6 {
 
         @media (max-width: 990px) {
             font-size: 4.5em;
-            margin-top: 35px;
         }
 
         @media (max-width: 895px) {
@@ -360,7 +398,7 @@ h6 {
         font-weight: 700;
         font-family: 'Open Sans', sans-serif;
         font-style: italic;
-        margin-bottom: 30px;
+        margin: 0 0 30px 0;
 
         @media (max-width: 895px) {
             font-size: 1.1em;
@@ -368,7 +406,6 @@ h6 {
 
         @media (max-width: 550px) {
             font-size: 0.8em;
-            margin: 15px 0 20px 0;
         }
     }
 
@@ -389,50 +426,124 @@ h6 {
             width: 80%;
         }
     }
+}
 
-    @media (max-width: 895px) {
-        margin-top: 50px;
+.about {
+    position: relative;
+    background-color: #fff;
+    height: 1100px;
+    padding-top: 200px;
+    text-align: center;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 250px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url("../img/Shadow_.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left bottom;
+        width: 50%;
     }
 }
 
-.img {
-    width: 100%;
-    height: 100vh;
-    min-height: 667px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    object-fit: cover;
 
-    @media (min-width: 1000px) {
-        object-fit: fill;
+
+.about__text {
+    h1 {
+        font-size: 62px;
+        font-weight: 800;
+        color: #e2a355;
+        margin: 0 0 20px 0;
+    }
+
+    h3 {
+        color: #54524f;
+        font-size: 27px;
+        font-weight: 500;
+        font-style: italic;
+        max-width: 60%;
+        margin: 0 auto;
     }
 }
 
-.frame-main {
+.about__card {
     width: 100%;
-    height: 100vh;
-    min-height: 667px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url("../img/shape-top.png");
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: 100% 17%;
-    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+
 }
 
-.frame-down {
+.column__item {
+    width: 30%;
+    height: auto;
+    margin: 20px 0;
+    background-color: #7f7770;
+}
+
+.column__item .item__icon {
     width: 100%;
-    height: 100vh;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background-image: url("../img/shape-down.png");
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: 100% 12%;
-    z-index: 5;
+    height: 400px;
+    margin: 0 0 50px 0;
+}
+
+.card__name {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.card__text {
+    font-size: 23px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 0 50px 0;
+}
+
+.features .column__item .item__icon {
+    border: 0;
+    margin: 0 0 30px;
+}
+
+.column__item .item__textual {
+    padding-top: 20px;
+}
+
+.column__item .item__name {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 500;
+    font-family: 'Exo', sans-serif;
+    margin: 0 0 5px 0;
+}
+
+.features .column__item .item__name {
+    color: #333;
+    margin: 0 0 20px 0;
+}
+
+.column__item .item__position {
+    color: #ff6d6d;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Exo', sans-serif;
+    margin: 0 0 30px 0;
+}
+
+.column__item .item__text {
+    color: #b2b2b4;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    font-family: 'Exo', sans-serif;
+    margin: 0 0 40px 0;
+    letter-spacing: 1px;
+}
+
+.features .column__item .item__text {
+    color: #6e6e6d;
+    font-style: normal;
 }
