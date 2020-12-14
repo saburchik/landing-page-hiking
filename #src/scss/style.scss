@@ -42,14 +42,19 @@ h6 {
     padding: 0 15px;
 }
 
-.image {
+.intro-main {
+    position: relative;
+}
+
+.frame-bg,
+.intro-bg {
     width: 100%;
     height: 100vh;
     min-height: 700px;
     position: absolute;
     top: 0;
-    right: 0;
-    z-index: 1;
+    left: 0;
+    z-index: 2;
     object-fit: cover;
 
     @media (min-width: 1000px) {
@@ -57,31 +62,8 @@ h6 {
     }
 }
 
-.frame-main {
-    width: 100%;
-    height: 100vh;
-    min-height: 700px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url("../img/shape-top.png");
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: 100% 17%;
-    z-index: 5;
-}
-
-.frame-down {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background-image: url("../img/shape-down.png");
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: 100% 12%;
-    z-index: 5;
+.intro-bg {
+    z-index: 1;
 }
 
 .button-small {
@@ -113,6 +95,8 @@ h6 {
         font-size: 14px;
     }
 }
+
+// block header ________________________________________________________________________________________________
 
 .header {
     width: 100%;
@@ -223,7 +207,6 @@ h6 {
 }
 
 // <Search>
-
 .search {
     display: flex;
     justify-content: center;
@@ -341,14 +324,17 @@ h6 {
 }
 
 
-
-
-
+// block intro ________________________________________________________________________________________________________
 .intro {
-    height: 80vh;
+
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media (max-height: 800px) {
+        height: 500px;
+    }
 }
 
 .intro__textual {
@@ -428,11 +414,12 @@ h6 {
     }
 }
 
+// block about ____________________________________________________________________________________________
+
 .about {
     position: relative;
     background-color: #fff;
     height: 1100px;
-    padding-top: 200px;
     text-align: center;
 
     &:before {

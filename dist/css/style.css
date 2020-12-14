@@ -30,43 +30,25 @@ h6 {
   padding: 0 15px;
 }
 
-.image {
-  width: 100%;
-  height: 100vh;
-  min-height: 700px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  -o-object-fit: cover;
-     object-fit: cover;
+.intro-main {
+  position: relative;
 }
 
-.frame-main {
+.frame-bg,
+.intro-bg {
   width: 100%;
   height: 100vh;
   min-height: 700px;
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("../img/shape-top.png");
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: 100% 17%;
-  z-index: 5;
+  z-index: 2;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-.frame-down {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background-image: url("../img/shape-down.png");
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: 100% 12%;
-  z-index: 5;
+.intro-bg {
+  z-index: 1;
 }
 
 .button-small {
@@ -324,7 +306,7 @@ h6 {
 }
 
 .intro {
-  height: 80vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -383,7 +365,6 @@ h6 {
   position: relative;
   background-color: #fff;
   height: 1100px;
-  padding-top: 200px;
   text-align: center;
 }
 
@@ -499,7 +480,8 @@ h6 {
 }
 
 @media (min-width: 1000px) {
-  .image {
+  .frame-bg,
+  .intro-bg {
     -o-object-fit: fill;
        object-fit: fill;
   }
@@ -598,8 +580,10 @@ h6 {
   }
 }
 
-.webp .frame-main{ background-image: url(../img/shape-top.webp); }
-
-.webp .frame-down{ background-image: url(../img/shape-down.webp); }
+@media (max-height: 800px) {
+  .intro {
+    height: 500px;
+  }
+}
 
 .webp .about:before{ background-image: url(../img/Shadow_.webp); }
