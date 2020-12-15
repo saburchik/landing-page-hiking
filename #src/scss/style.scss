@@ -11,8 +11,6 @@
 
 @import "fonts";
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
-
 
 body {
     padding: 0;
@@ -40,30 +38,6 @@ h6 {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 15px;
-}
-
-.intro-main {
-    position: relative;
-}
-
-.frame-bg,
-.intro-bg {
-    width: 100%;
-    height: 100vh;
-    min-height: 700px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    object-fit: cover;
-
-    @media (min-width: 1000px) {
-        object-fit: fill;
-    }
-}
-
-.intro-bg {
-    z-index: 1;
 }
 
 .button-small {
@@ -96,12 +70,46 @@ h6 {
     }
 }
 
+.button-big {
+    width: 30%;
+    color: #fff;
+    background-color: #7f7770;
+    border-radius: 50px;
+    font-size: 23px;
+    font-weight: 800;
+    font-family: "Open Sans";
+    padding: 20px 13px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    transition: .1s linear;
+    letter-spacing: 5px;
+
+    &:hover {
+        background-color: #66605b;
+    }
+
+    @media (max-width: 890px) {
+        padding: 15px 13px;
+    }
+
+    @media (max-width: 790px) {
+        font-size: 19px;
+    }
+
+    @media (max-width: 770px) {
+        margin: 0 0 50px 0;
+        width: 40%;
+        min-width: 250px
+    }
+}
+
 // block header ________________________________________________________________________________________________
 
 .header {
     width: 100%;
     padding-top: 15px;
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -326,16 +334,36 @@ h6 {
 
 // block intro ________________________________________________________________________________________________________
 .intro {
-
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    @media (max-height: 800px) {
-        height: 500px;
-    }
+    height: 800px;
+    padding-top: 100px;
+    background: url("../img/header-bg2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+// .frame-bg,
+// .intro-bg {
+//     width: 100%;
+//     height: 100vh;
+//     min-height: 700px;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     z-index: 2;
+//     object-fit: cover;
+
+//     @media (min-width: 1000px) {
+//         object-fit: fill;
+//     }
+// }
+
+// .intro-bg {
+//     z-index: 1;
+// }
 
 .intro__textual {
     width: 50%;
@@ -419,49 +447,83 @@ h6 {
 .about {
     position: relative;
     background-color: #fff;
-    height: 1100px;
-    text-align: center;
+    height: auto;
 
     &:before {
         content: '';
+        background-image: url("../img/Shadow_.png");
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        width: 50%;
         position: absolute;
         top: 250px;
         right: 0;
         bottom: 0;
         left: 0;
-        background-image: url("../img/Shadow_.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: left bottom;
-        width: 50%;
+        z-index: 1;
+        margin: 0 0 50px 0;
     }
 }
 
 
 
 .about__text {
+    text-align: center;
+
     h1 {
         font-size: 62px;
         font-weight: 800;
         color: #e2a355;
         margin: 0 0 20px 0;
+        font-family: "Open Sans";
+
+        @media (max-width: 700px) {
+            font-size: 50px;
+        }
+
+        @media (max-width: 490px) {
+            font-size: 35px;
+            margin: 0 0 15px 0;
+        }
     }
 
     h3 {
-        color: #54524f;
+        color: #7f7770;
         font-size: 27px;
         font-weight: 500;
-        font-style: italic;
         max-width: 60%;
-        margin: 0 auto;
+        font-family: "Open Sans";
+        margin: 0 auto 70px;
+
+        @media (max-width: 1100px) {
+            max-width: 80%;
+        }
+
+        @media (max-width: 700px) {
+            font-size: 21px;
+            max-width: 90%;
+        }
+
+        @media (max-width: 490px) {
+            font-size: 14px;
+            margin: 0 auto 40px;
+            max-width: 95%;
+        }
     }
 }
 
 .about__card {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    position: relative;
+    z-index: 5;
+    margin: 0 0 40px 0;
 
+    @media (max-width: 770px) {
+        justify-content: center;
+    }
 }
 
 .column__item {
@@ -469,18 +531,39 @@ h6 {
     height: auto;
     margin: 20px 0;
     background-color: #7f7770;
+
+    @media (max-width: 770px) {
+        width: 100%;
+        max-width: 410px;
+        margin-bottom: 30px;
+    }
 }
 
 .column__item .item__icon {
     width: 100%;
-    height: 400px;
+    height: auto;
     margin: 0 0 50px 0;
+
+    @media (max-width: 990px) {
+        margin: 0 0 30px 0;
+    }
+}
+
+.block__text {
+    width: 100%;
+    height: auto;
+    padding: 0 15px;
 }
 
 .card__name {
     font-size: 30px;
     font-weight: 700;
     color: #fff;
+    margin: 0 0 25px 0;
+
+    @media (max-width: 990px) {
+        font-size: 27px;
+    }
 }
 
 .card__text {
@@ -488,49 +571,16 @@ h6 {
     font-weight: 500;
     color: #fff;
     margin: 0 0 50px 0;
+
+    @media (max-width: 990px) {
+        font-size: 19px;
+    }
 }
 
-.features .column__item .item__icon {
-    border: 0;
-    margin: 0 0 30px;
-}
-
-.column__item .item__textual {
-    padding-top: 20px;
-}
-
-.column__item .item__name {
-    color: #fff;
-    font-size: 22px;
-    font-weight: 500;
-    font-family: 'Exo', sans-serif;
-    margin: 0 0 5px 0;
-}
-
-.features .column__item .item__name {
-    color: #333;
-    margin: 0 0 20px 0;
-}
-
-.column__item .item__position {
-    color: #ff6d6d;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: 'Exo', sans-serif;
-    margin: 0 0 30px 0;
-}
-
-.column__item .item__text {
-    color: #b2b2b4;
-    font-size: 16px;
-    font-weight: 400;
-    font-style: italic;
-    font-family: 'Exo', sans-serif;
-    margin: 0 0 40px 0;
-    letter-spacing: 1px;
-}
-
-.features .column__item .item__text {
-    color: #6e6e6d;
-    font-style: normal;
+.button__show {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    margin: 0 0 150px 0;
 }

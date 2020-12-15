@@ -1,6 +1,83 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;
+@font-face {
+  font-family: "OpenSans-Bold";
+  font-display: swap;
+  src: url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/file_name.woff2") format(woff2);
+  font-weight: 400;
+  font-style: normal;
+}
 
-0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+@font-face {
+  font-family: "OpenSans-ExtraBold";
+  font-display: swap;
+  src: url("../fonts/OpenSans-ExtraBold.woff") format("woff"), url("../fonts/file_name.woff2") format(woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSans-ExtraBoldItalic";
+  font-display: swap;
+  src: url("../fonts/OpenSans-ExtraBoldItalic.woff") format("woff"), url("../fonts/file_name.woff2") format(woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSans-Italic";
+  font-display: swap;
+  src: url("../fonts/OpenSans-Italic.woff") format("woff"), url("../fonts/file_name.woff2") format(woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSans-Light";
+  font-display: swap;
+  src: url("../fonts/OpenSans-Light.woff") format("woff"), url("../fonts/file_name.woff2") format(woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSans-LightItalic";
+  font-display: swap;
+  src: url("../fonts/OpenSans-LightItalic.woff") format("woff"), url("../fonts/file_name.woff2") format(woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSans-BoldItalic";
+  font-display: swap;
+  src: url("../fonts/OpenSans-BoldItalic.woff") format("woff"), url("../fonts/file_name.woff2") format(woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSans-Regular";
+  font-display: swap;
+  src: url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/file_name.woff2") format(woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSans-SemiBoldItalic";
+  font-display: swap;
+  src: url("../fonts/OpenSans-SemiBoldItalic.woff") format("woff"), url("../fonts/file_name.woff2") format(woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSans-SemiBold";
+  font-display: swap;
+  src: url("../fonts/OpenSans-SemiBold.woff") format("woff"), url("../fonts/file_name.woff2") format(woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -30,27 +107,6 @@ h6 {
   padding: 0 15px;
 }
 
-.intro-main {
-  position: relative;
-}
-
-.frame-bg,
-.intro-bg {
-  width: 100%;
-  height: 100vh;
-  min-height: 700px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.intro-bg {
-  z-index: 1;
-}
-
 .button-small {
   width: 220px;
   color: #776c64;
@@ -74,10 +130,32 @@ h6 {
   background-color: #deb37e;
 }
 
+.button-big {
+  width: 30%;
+  color: #fff;
+  background-color: #7f7770;
+  border-radius: 50px;
+  font-size: 23px;
+  font-weight: 800;
+  font-family: "Open Sans";
+  padding: 20px 13px;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  -webkit-transition: .1s linear;
+  -o-transition: .1s linear;
+  transition: .1s linear;
+  letter-spacing: 5px;
+}
+
+.button-big:hover {
+  background-color: #66605b;
+}
+
 .header {
   width: 100%;
   padding-top: 15px;
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -306,7 +384,6 @@ h6 {
 }
 
 .intro {
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -317,6 +394,12 @@ h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 800px;
+  padding-top: 100px;
+  background: url("../img/header-bg2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .intro__textual {
@@ -364,22 +447,26 @@ h6 {
 .about {
   position: relative;
   background-color: #fff;
-  height: 1100px;
-  text-align: center;
+  height: auto;
 }
 
 .about:before {
   content: '';
+  background-image: url("../img/Shadow_.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  width: 50%;
   position: absolute;
   top: 250px;
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: url("../img/Shadow_.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: left bottom;
-  width: 50%;
+  z-index: 1;
+  margin: 0 0 50px 0;
+}
+
+.about__text {
+  text-align: center;
 }
 
 .about__text h1 {
@@ -387,15 +474,16 @@ h6 {
   font-weight: 800;
   color: #e2a355;
   margin: 0 0 20px 0;
+  font-family: "Open Sans";
 }
 
 .about__text h3 {
-  color: #54524f;
+  color: #7f7770;
   font-size: 27px;
   font-weight: 500;
-  font-style: italic;
   max-width: 60%;
-  margin: 0 auto;
+  font-family: "Open Sans";
+  margin: 0 auto 70px;
 }
 
 .about__card {
@@ -403,9 +491,14 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
+  z-index: 5;
+  margin: 0 0 40px 0;
 }
 
 .column__item {
@@ -417,14 +510,21 @@ h6 {
 
 .column__item .item__icon {
   width: 100%;
-  height: 400px;
+  height: auto;
   margin: 0 0 50px 0;
+}
+
+.block__text {
+  width: 100%;
+  height: auto;
+  padding: 0 15px;
 }
 
 .card__name {
   font-size: 30px;
   font-weight: 700;
   color: #fff;
+  margin: 0 0 25px 0;
 }
 
 .card__text {
@@ -434,57 +534,16 @@ h6 {
   margin: 0 0 50px 0;
 }
 
-.features .column__item .item__icon {
-  border: 0;
-  margin: 0 0 30px;
-}
-
-.column__item .item__textual {
-  padding-top: 20px;
-}
-
-.column__item .item__name {
-  color: #fff;
-  font-size: 22px;
-  font-weight: 500;
-  font-family: 'Exo', sans-serif;
-  margin: 0 0 5px 0;
-}
-
-.features .column__item .item__name {
-  color: #333;
-  margin: 0 0 20px 0;
-}
-
-.column__item .item__position {
-  color: #ff6d6d;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: 'Exo', sans-serif;
-  margin: 0 0 30px 0;
-}
-
-.column__item .item__text {
-  color: #b2b2b4;
-  font-size: 16px;
-  font-weight: 400;
-  font-style: italic;
-  font-family: 'Exo', sans-serif;
-  margin: 0 0 40px 0;
-  letter-spacing: 1px;
-}
-
-.features .column__item .item__text {
-  color: #6e6e6d;
-  font-style: normal;
-}
-
-@media (min-width: 1000px) {
-  .frame-bg,
-  .intro-bg {
-    -o-object-fit: fill;
-       object-fit: fill;
-  }
+.button__show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  z-index: 5;
+  margin: 0 0 150px 0;
 }
 
 @media (max-width: 1135px) {
@@ -493,9 +552,27 @@ h6 {
   }
 }
 
+@media (max-width: 1100px) {
+  .about__text h3 {
+    max-width: 80%;
+  }
+}
+
 @media (max-width: 990px) {
   .intro__textual .intro__main {
     font-size: 4.5em;
+  }
+
+  .column__item .item__icon {
+    margin: 0 0 30px 0;
+  }
+
+  .card__name {
+    font-size: 27px;
+  }
+
+  .card__text {
+    font-size: 19px;
   }
 }
 
@@ -513,7 +590,25 @@ h6 {
   }
 }
 
+@media (max-width: 890px) {
+  .button-big {
+    padding: 15px 13px;
+  }
+}
+
+@media (max-width: 790px) {
+  .button-big {
+    font-size: 19px;
+  }
+}
+
 @media (max-width: 770px) {
+  .button-big {
+    margin: 0 0 50px 0;
+    width: 40%;
+    min-width: 250px;
+  }
+
   .header {
     padding: 10px 0;
   }
@@ -540,6 +635,18 @@ h6 {
   .nav-toggle {
     display: block;
   }
+
+  .about__card {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .column__item {
+    width: 100%;
+    max-width: 410px;
+    margin-bottom: 30px;
+  }
 }
 
 @media (max-width: 740px) {
@@ -555,6 +662,17 @@ h6 {
 
   .intro__textual .intro__main {
     font-size: 2.7em;
+  }
+}
+
+@media (max-width: 700px) {
+  .about__text h1 {
+    font-size: 50px;
+  }
+
+  .about__text h3 {
+    font-size: 21px;
+    max-width: 90%;
   }
 }
 
@@ -574,16 +692,25 @@ h6 {
   }
 }
 
+@media (max-width: 490px) {
+  .about__text h1 {
+    font-size: 35px;
+    margin: 0 0 15px 0;
+  }
+
+  .about__text h3 {
+    font-size: 14px;
+    margin: 0 auto 40px;
+    max-width: 95%;
+  }
+}
+
 @media (max-width: 340px) {
   .intro__textual .intro__main {
     font-size: 1.5em;
   }
 }
 
-@media (max-height: 800px) {
-  .intro {
-    height: 500px;
-  }
-}
+.webp .intro { background: url(../img/header-bg2.webp); }
 
-.webp .about:before{ background-image: url(../img/Shadow_.webp); }
+.webp .about:before { background-image: url(../img/Shadow_.webp); }
