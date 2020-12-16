@@ -33,6 +33,10 @@ h6 {
     margin: 0;
 }
 
+picture {
+    display: flex;
+}
+
 .container {
     width: 100%;
     max-width: 1400px;
@@ -72,12 +76,12 @@ h6 {
 
 .button-big {
     width: 30%;
+    min-width: 270px;
     color: #fff;
     background-color: #7f7770;
     border-radius: 50px;
     font-size: 23px;
-    font-weight: 800;
-    font-family: "Open Sans";
+    font-weight: 700;
     padding: 20px 13px;
     outline: 0;
     border: 0;
@@ -89,18 +93,32 @@ h6 {
         background-color: #66605b;
     }
 
+    .discount__button & {
+        color: #fff;
+        font-size: 30px;
+        font-weight: 700;
+        width: 45%;
+        background-color: #e2a355;
+
+        &:hover {
+            background-color: #c38c49;
+        }
+
+        @media (max-width: 530px) {
+            font-size: 20px;
+        }
+    }
+
     @media (max-width: 890px) {
         padding: 15px 13px;
     }
 
-    @media (max-width: 790px) {
-        font-size: 19px;
+    @media (max-width: 530px) {
+        font-size: 20px;
     }
 
     @media (max-width: 770px) {
-        margin: 0 0 50px 0;
         width: 40%;
-        min-width: 250px
     }
 }
 
@@ -448,24 +466,20 @@ h6 {
     position: relative;
     background-color: #fff;
     height: auto;
-
-    &:before {
-        content: '';
-        background-image: url("../img/Shadow_.png");
-        background-repeat: no-repeat;
-        background-position: left bottom;
-        width: 50%;
-        position: absolute;
-        top: 250px;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1;
-        margin: 0 0 50px 0;
-    }
 }
 
-
+.leaf-bg {
+    background-image: url("../img/Shadow_.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
 
 .about__text {
     text-align: center;
@@ -475,7 +489,6 @@ h6 {
         font-weight: 800;
         color: #e2a355;
         margin: 0 0 20px 0;
-        font-family: "Open Sans";
 
         @media (max-width: 700px) {
             font-size: 50px;
@@ -492,7 +505,6 @@ h6 {
         font-size: 27px;
         font-weight: 500;
         max-width: 60%;
-        font-family: "Open Sans";
         margin: 0 auto 70px;
 
         @media (max-width: 1100px) {
@@ -582,5 +594,90 @@ h6 {
     justify-content: center;
     position: relative;
     z-index: 5;
-    margin: 0 0 150px 0;
+    padding: 0 0 150px;
+
+    @media (max-width: 490px) {
+        padding: 0 0 75px;
+    }
+}
+
+// discount ______________________________________________________________________________________________________
+
+.discount__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #7f7770;
+
+    @media (max-width: 770px) {
+        flex-direction: column;
+    }
+}
+
+.part-2 {
+    flex-direction: row-reverse;
+    background-color: #deb37e;
+}
+
+.discount__img {
+    width: 50%;
+
+    img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+}
+
+.discount__textual {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    padding: 15px 50px;
+
+    .discount__title {
+        color: #fff;
+        font-size: 59px;
+        font-weight: 700;
+        margin: 0 0 30px;
+        max-width: 650px;
+
+        @media (max-width: 900px) {
+            font-size: 49px;
+        }
+
+        @media (max-width: 490px) {
+            font-size: 30px;
+        }
+    }
+
+    .discount__text {
+        color: #fff;
+        font-size: 30px;
+        font-weight: 500;
+        margin: 0 0 30px;
+        max-width: 600px;
+
+        @media (max-width: 900px) {
+            font-size: 24px;
+        }
+
+        @media (max-width: 490px) {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 530px) {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 770px) {
+
+    .discount__img,
+    .discount__textual {
+        width: 100%;
+        text-align: center;
+    }
 }

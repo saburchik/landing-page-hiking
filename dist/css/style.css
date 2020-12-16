@@ -100,6 +100,12 @@ h6 {
   margin: 0;
 }
 
+picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .container {
   width: 100%;
   max-width: 1400px;
@@ -132,12 +138,12 @@ h6 {
 
 .button-big {
   width: 30%;
+  min-width: 270px;
   color: #fff;
   background-color: #7f7770;
   border-radius: 50px;
   font-size: 23px;
-  font-weight: 800;
-  font-family: "Open Sans";
+  font-weight: 700;
   padding: 20px 13px;
   outline: 0;
   border: 0;
@@ -150,6 +156,18 @@ h6 {
 
 .button-big:hover {
   background-color: #66605b;
+}
+
+.discount__button .button-big {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  width: 45%;
+  background-color: #e2a355;
+}
+
+.discount__button .button-big:hover {
+  background-color: #c38c49;
 }
 
 .header {
@@ -450,19 +468,17 @@ h6 {
   height: auto;
 }
 
-.about:before {
-  content: '';
+.leaf-bg {
   background-image: url("../img/Shadow_.png");
   background-repeat: no-repeat;
   background-position: left bottom;
-  width: 50%;
+  width: 100%;
   position: absolute;
-  top: 250px;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 1;
-  margin: 0 0 50px 0;
 }
 
 .about__text {
@@ -474,7 +490,6 @@ h6 {
   font-weight: 800;
   color: #e2a355;
   margin: 0 0 20px 0;
-  font-family: "Open Sans";
 }
 
 .about__text h3 {
@@ -482,7 +497,6 @@ h6 {
   font-size: 27px;
   font-weight: 500;
   max-width: 60%;
-  font-family: "Open Sans";
   margin: 0 auto 70px;
 }
 
@@ -543,7 +557,69 @@ h6 {
           justify-content: center;
   position: relative;
   z-index: 5;
-  margin: 0 0 150px 0;
+  padding: 0 0 150px;
+}
+
+.discount__wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #7f7770;
+}
+
+.part-2 {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  background-color: #deb37e;
+}
+
+.discount__img {
+  width: 50%;
+}
+
+.discount__img img {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.discount__textual {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+  padding: 15px 50px;
+}
+
+.discount__textual .discount__title {
+  color: #fff;
+  font-size: 59px;
+  font-weight: 700;
+  margin: 0 0 30px;
+  max-width: 650px;
+}
+
+.discount__textual .discount__text {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0 0 30px;
+  max-width: 600px;
 }
 
 @media (max-width: 1135px) {
@@ -576,6 +652,16 @@ h6 {
   }
 }
 
+@media (max-width: 900px) {
+  .discount__textual .discount__title {
+    font-size: 49px;
+  }
+
+  .discount__textual .discount__text {
+    font-size: 24px;
+  }
+}
+
 @media (max-width: 895px) {
   .intro__textual .intro__main {
     font-size: 3.7em;
@@ -596,17 +682,9 @@ h6 {
   }
 }
 
-@media (max-width: 790px) {
-  .button-big {
-    font-size: 19px;
-  }
-}
-
 @media (max-width: 770px) {
   .button-big {
-    margin: 0 0 50px 0;
     width: 40%;
-    min-width: 250px;
   }
 
   .header {
@@ -646,6 +724,19 @@ h6 {
     width: 100%;
     max-width: 410px;
     margin-bottom: 30px;
+  }
+
+  .discount__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .discount__img,
+  .discount__textual {
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -692,6 +783,20 @@ h6 {
   }
 }
 
+@media (max-width: 530px) {
+  .discount__button .button-big {
+    font-size: 20px;
+  }
+
+  .button-big {
+    font-size: 20px;
+  }
+
+  .discount__textual {
+    padding: 15px;
+  }
+}
+
 @media (max-width: 490px) {
   .about__text h1 {
     font-size: 35px;
@@ -703,6 +808,18 @@ h6 {
     margin: 0 auto 40px;
     max-width: 95%;
   }
+
+  .button__show {
+    padding: 0 0 75px;
+  }
+
+  .discount__textual .discount__title {
+    font-size: 30px;
+  }
+
+  .discount__textual .discount__text {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 340px) {
@@ -713,4 +830,4 @@ h6 {
 
 .webp .intro { background: url(../img/header-bg2.webp); }
 
-.webp .about:before { background-image: url(../img/Shadow_.webp); }
+.webp .leaf-bg { background-image: url(../img/Shadow_.webp); }
