@@ -372,42 +372,20 @@ picture {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 800px;
-    padding-top: 100px;
-    background: url("../img/header-bg2.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 100vh;
+    min-height: 600px;
+    background: url("../img/header-bg.jpg") center / cover no-repeat;
 }
 
-// .frame-bg,
-// .intro-bg {
-//     width: 100%;
-//     height: 100vh;
-//     min-height: 700px;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     z-index: 2;
-//     object-fit: cover;
-
-//     @media (min-width: 1000px) {
-//         object-fit: fill;
-//     }
-// }
-
-// .intro-bg {
-//     z-index: 1;
-// }
-
 .intro__textual {
-    width: 50%;
+    width: 100%;
     max-width: 805px;
     display: inline-flex;
     flex-direction: column;
     align-items: baseline;
-    position: relative;
+    position: absolute;
     z-index: 50;
+
 
     .intro__main {
         color: #deb37e;
@@ -752,6 +730,7 @@ picture {
     flex-direction: column;
     justify-content: center;
     height: 100vh;
+    min-height: 600px;
     background: url("../img/explore.jpg");
     background-position: center;
     background-repeat: no-repeat;

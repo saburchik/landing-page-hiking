@@ -429,16 +429,13 @@ picture {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 800px;
-  padding-top: 100px;
-  background: url("../img/header-bg2.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 100vh;
+  min-height: 600px;
+  background: url("../img/header-bg.jpg") center/cover no-repeat;
 }
 
 .intro__textual {
-  width: 50%;
+  width: 100%;
   max-width: 805px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -450,7 +447,7 @@ picture {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
-  position: relative;
+  position: absolute;
   z-index: 50;
 }
 
@@ -708,6 +705,7 @@ picture {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100vh;
+  min-height: 600px;
   background: url("../img/explore.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -922,7 +920,7 @@ picture {
 
 .webp .leaf-bg { background-image: url(../img/Shadow_.webp); }
 
-.webp .intro { background: url(../img/header-bg2.webp); }
+.webp .intro { background: url(../img/header-bg.webp) center/cover no-repeat; }
 
 .webp .leaf-bg { background-image: url(../img/Shadow_.webp); }
 
