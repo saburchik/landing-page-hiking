@@ -122,6 +122,23 @@ picture {
     }
 }
 
+.leaf-bg {
+    background-image: url("../img/Shadow_.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    .mountains & {
+        background-position: left center;
+    }
+}
+
 // block header ________________________________________________________________________________________________
 
 .header {
@@ -483,6 +500,8 @@ picture {
 
 .about__text {
     text-align: center;
+    position: relative;
+    z-index: 5;
 
     h1 {
         font-size: 62px;
@@ -625,6 +644,7 @@ picture {
     img {
         width: 100%;
         height: 100vh;
+        min-height: 600px;
         object-fit: cover;
     }
 }
@@ -680,4 +700,60 @@ picture {
         width: 100%;
         text-align: center;
     }
+}
+
+// mountains block________________________________________________________________________________________________
+.mountains {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #99928d;
+
+}
+
+.frame__fx {
+    width: 100%;
+    position: relative;
+    z-index: 5;
+}
+
+.frame__img {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+}
+
+.mountains__textual {
+    width: 900px;
+    text-align: center;
+    position: absolute;
+    align-items: center;
+    z-index: 10;
+
+    .mountains__title {
+        color: #fff;
+        font-size: 59px;
+        font-family: "OpenSans-SemiBold";
+    }
+
+    .mountains__text {
+        color: #dbdbdb;
+        min-width: 600px;
+        font-size: 30px;
+        font-family: "OpenSans-Regular";
+        letter-spacing: 2px;
+    }
+}
+
+.explore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    background: url("../img/explore.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
