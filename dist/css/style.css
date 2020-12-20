@@ -434,9 +434,8 @@ picture {
   background: url("../img/header-bg.jpg") center/cover no-repeat;
 }
 
-.intro__textual {
+.intro__content {
   width: 100%;
-  max-width: 805px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -451,7 +450,11 @@ picture {
   z-index: 50;
 }
 
-.intro__textual .intro__main {
+.intro__content .intro__textual {
+  max-width: 805px;
+}
+
+.intro__content .intro__main {
   color: #deb37e;
   font-size: 5.75em;
   font-weight: 800;
@@ -459,7 +462,7 @@ picture {
   text-shadow: 3px -5px 10px #d3d2cd;
 }
 
-.intro__textual .intro__title {
+.intro__content .intro__title {
   color: #54524f;
   font-size: 1.5em;
   font-weight: 700;
@@ -468,7 +471,7 @@ picture {
   margin: 0 0 30px 0;
 }
 
-.intro__textual .intro__text {
+.intro__content .intro__text {
   color: #54524f;
   font-size: 1.3em;
   font-family: 'Open Sans', sans-serif;
@@ -603,7 +606,7 @@ picture {
 .discount__img img {
   width: 100%;
   height: 100vh;
-  min-height: 600px;
+  min-height: 775px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -670,7 +673,7 @@ picture {
 }
 
 .mountains__textual {
-  width: 900px;
+  width: 100%;
   text-align: center;
   position: absolute;
   -webkit-box-align: center;
@@ -682,14 +685,14 @@ picture {
 .mountains__textual .mountains__title {
   color: #fff;
   font-size: 59px;
-  font-family: "OpenSans-SemiBold";
+  font-weight: 600;
 }
 
 .mountains__textual .mountains__text {
   color: #dbdbdb;
   min-width: 600px;
   font-size: 30px;
-  font-family: "OpenSans-Regular";
+  font-weight: 400;
   letter-spacing: 2px;
 }
 
@@ -712,8 +715,27 @@ picture {
   background-size: cover;
 }
 
+.explore .explore__textual {
+  width: 100%;
+  text-align: right;
+  position: absolute;
+  z-index: 5;
+}
+
+.explore .explore__title {
+  color: #deb37e;
+  font-size: 75px;
+  font-style: italic;
+  font-weight: 800;
+  text-shadow: 3px -5px 10px #d3d2cd;
+}
+
+.explore .explore__title span {
+  color: #54524f;
+}
+
 @media (max-width: 1135px) {
-  .intro__textual .intro__main {
+  .intro__content .intro__main {
     font-size: 5em;
   }
 }
@@ -724,8 +746,14 @@ picture {
   }
 }
 
+@media (max-width: 1000px) {
+  .explore .explore__title {
+    font-size: 57px;
+  }
+}
+
 @media (max-width: 990px) {
-  .intro__textual .intro__main {
+  .intro__content .intro__main {
     font-size: 4.5em;
   }
 
@@ -753,15 +781,15 @@ picture {
 }
 
 @media (max-width: 895px) {
-  .intro__textual .intro__main {
+  .intro__content .intro__main {
     font-size: 3.7em;
   }
 
-  .intro__textual .intro__title {
+  .intro__content .intro__title {
     font-size: 1.1em;
   }
 
-  .intro__textual .intro__text {
+  .intro__content .intro__text {
     font-size: 1em;
   }
 }
@@ -769,6 +797,23 @@ picture {
 @media (max-width: 890px) {
   .button-big {
     padding: 15px 13px;
+  }
+}
+
+@media (max-width: 775px) {
+  .explore .explore__textual {
+    text-align: center;
+  }
+
+  .explore .explore__title {
+    padding-top: 100px;
+    font-size: 48px;
+  }
+
+  .explore {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
   }
 }
 
@@ -841,7 +886,7 @@ picture {
     font-size: 14px;
   }
 
-  .intro__textual .intro__main {
+  .intro__content .intro__main {
     font-size: 2.7em;
   }
 }
@@ -857,16 +902,22 @@ picture {
   }
 }
 
+@media (max-width: 650px) {
+  .mountains__textual .mountains__text {
+    min-width: 100%;
+  }
+}
+
 @media (max-width: 550px) {
-  .intro__textual .intro__main {
+  .intro__content .intro__main {
     font-size: 2em;
   }
 
-  .intro__textual .intro__title {
+  .intro__content .intro__title {
     font-size: 0.8em;
   }
 
-  .intro__textual .intro__text {
+  .intro__content .intro__text {
     font-size: 0.8em;
     margin: 20px 0 0 0;
     width: 80%;
@@ -910,10 +961,18 @@ picture {
   .discount__textual .discount__text {
     font-size: 16px;
   }
+
+  .mountains__textual .mountains__title {
+    font-size: 48px;
+  }
+
+  .mountains__textual .mountains__text {
+    font-size: 25px;
+  }
 }
 
 @media (max-width: 340px) {
-  .intro__textual .intro__main {
+  .intro__content .intro__main {
     font-size: 1.5em;
   }
 }
