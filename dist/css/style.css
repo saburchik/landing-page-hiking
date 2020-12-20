@@ -187,6 +187,19 @@ picture {
   background-position: left center;
 }
 
+.leaf-right {
+  background-image: url("../img/leaf-right.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
 .header {
   width: 100%;
   padding-top: 15px;
@@ -541,6 +554,10 @@ picture {
   background-color: #7f7770;
 }
 
+.reviews .column__item {
+  background-color: transparent;
+}
+
 .column__item .item__icon {
   width: 100%;
   height: auto;
@@ -560,11 +577,21 @@ picture {
   margin: 0 0 25px 0;
 }
 
+.reviews .card__name {
+  font-size: 33px;
+  color: #deb37e;
+}
+
 .card__text {
   font-size: 23px;
   font-weight: 500;
   color: #fff;
   margin: 0 0 50px 0;
+}
+
+.reviews .card__text {
+  font-size: 18px;
+  color: #333d42;
 }
 
 .button__show {
@@ -734,6 +761,133 @@ picture {
   color: #54524f;
 }
 
+.reviews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  position: relative;
+}
+
+.comment {
+  position: relative;
+  z-index: 5;
+  padding-bottom: 50px;
+}
+
+.comment__block {
+  width: 100%;
+  text-align: center;
+}
+
+.comment__block span {
+  font-size: 100px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.comment__block .comment__text {
+  color: #3f3f3f;
+  font-size: 25px;
+  max-width: 60%;
+  margin: 0 auto 50px;
+}
+
+.comment__block .comment__name {
+  color: #3f3f3f;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.email {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  min-height: 600px;
+  background-color: #deb37e;
+}
+
+.email__field {
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+  text-align: center;
+}
+
+.email__textual .email__title {
+  color: #fff;
+  font-size: 75px;
+  font-weight: 700;
+  margin: 0 0 70px;
+}
+
+.email__textual .email__suptitle {
+  color: #54524f;
+  font-size: 30px;
+  font-weight: 400;
+  max-width: 70%;
+  margin: 0 auto 50px;
+}
+
+.subscribe {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.subscribe input {
+  max-width: 70%;
+  background-color: #f6f6f6;
+  border: 2px solid #cccccc;
+  border-right: 0;
+  border-radius: 5px 0px 0px 5px;
+  padding: 10px 15px;
+  color: #868686;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Exo', sans-serif;
+  outline: none;
+}
+
+.subscribe button {
+  width: 15%;
+  height: 46px;
+  background-color: #ff8a8a;
+  border: 1px solid #868686;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: background 0.2s linear;
+  -o-transition: background 0.2s linear;
+  transition: background 0.2s linear;
+  margin: 0 -3px 0;
+  outline: none;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
 @media (max-width: 1135px) {
   .intro__content .intro__main {
     font-size: 5em;
@@ -855,6 +1009,10 @@ picture {
             justify-content: center;
   }
 
+  .reviews .column__item {
+    text-align: center;
+  }
+
   .column__item {
     width: 100%;
     max-width: 410px;
@@ -872,6 +1030,10 @@ picture {
   .discount__textual {
     width: 100%;
     text-align: center;
+  }
+
+  .reviews {
+    height: auto;
   }
 }
 
@@ -969,6 +1131,11 @@ picture {
   .mountains__textual .mountains__text {
     font-size: 25px;
   }
+
+  .comment__block .comment__text {
+    font-size: 20px;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 340px) {
@@ -978,6 +1145,8 @@ picture {
 }
 
 .webp .leaf-bg { background-image: url(../img/Shadow_.webp); }
+
+.webp .leaf-right { background-image: url(../img/leaf-right.webp); }
 
 .webp .intro { background: url(../img/header-bg.webp) center/cover no-repeat; }
 

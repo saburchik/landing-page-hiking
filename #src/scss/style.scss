@@ -139,6 +139,19 @@ picture {
     }
 }
 
+.leaf-right {
+    background-image: url("../img/leaf-right.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+}
+
 // block header ________________________________________________________________________________________________
 
 .header {
@@ -544,6 +557,14 @@ picture {
     margin: 20px 0;
     background-color: #7f7770;
 
+    .reviews & {
+        background-color: transparent;
+
+        @media (max-width: 770px) {
+            text-align: center;
+        }
+    }
+
     @media (max-width: 770px) {
         width: 100%;
         max-width: 410px;
@@ -573,6 +594,11 @@ picture {
     color: #fff;
     margin: 0 0 25px 0;
 
+    .reviews & {
+        font-size: 33px;
+        color: #deb37e;
+    }
+
     @media (max-width: 990px) {
         font-size: 27px;
     }
@@ -583,6 +609,11 @@ picture {
     font-weight: 500;
     color: #fff;
     margin: 0 0 50px 0;
+
+    .reviews & {
+        font-size: 18px;
+        color: #333d42;
+    }
 
     @media (max-width: 990px) {
         font-size: 19px;
@@ -787,5 +818,127 @@ picture {
 
     @media (max-width: 775px) {
         justify-content: end;
+    }
+}
+
+// review block _____________________________________________________________________________________________
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+
+    @media (max-width: 770px) {
+        height: auto;
+    }
+}
+
+.comment {
+    position: relative;
+    z-index: 5;
+    padding-bottom: 50px;
+}
+
+.comment__block {
+    width: 100%;
+    text-align: center;
+
+    span {
+        font-size: 100px;
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    .comment__text {
+        color: #3f3f3f;
+        font-size: 25px;
+        max-width: 60%;
+        margin: 0 auto 50px;
+
+        @media (max-width: 490px) {
+            font-size: 20px;
+            max-width: 100%;
+        }
+    }
+
+    .comment__name {
+        color: #3f3f3f;
+        font-size: 20px;
+        font-weight: 700;
+    }
+}
+
+// email block _____________________________________________________________________________________________________
+
+.email {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    min-height: 600px;
+    background-color: #deb37e;
+}
+
+.email__field {
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    text-align: center;
+}
+
+.email__textual {
+
+    .email__title {
+        color: #fff;
+        font-size: 75px;
+        font-weight: 700;
+        margin: 0 0 70px;
+    }
+
+    .email__suptitle {
+        color: #54524f;
+        font-size: 30px;
+        font-weight: 400;
+        max-width: 70%;
+        margin: 0 auto 50px;
+    }
+}
+
+.subscribe {
+    width: 70%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+
+    input {
+        max-width: 70%;
+        background-color: #f6f6f6;
+        border: 2px solid #cccccc;
+        border-right: 0;
+        border-radius: 5px 0px 0px 5px;
+        padding: 10px 15px;
+        color: #868686;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: 'Exo', sans-serif;
+        outline: none;
+    }
+
+    button {
+        width: 15%;
+        height: 46px;
+        background-color: #ff8a8a;
+        border: 1px solid #868686;
+        border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+        transition: background 0.2s linear;
+        margin: 0 -3px 0;
+        outline: none;
+        box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
     }
 }
