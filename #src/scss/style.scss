@@ -909,14 +909,15 @@ picture {
 }
 
 .subscribe {
-    width: 70%;
+    width: 100%;
+    max-width: 70%;
     display: flex;
     margin: 0 auto;
     justify-content: center;
 
     input {
         font-size: 25px;
-        width: 50%;
+        width: 60%;
         max-width: 70%;
         background-color: #f6f6f6;
         border: 0;
@@ -928,12 +929,17 @@ picture {
         font-weight: 400;
         font-family: 'Exo', sans-serif;
         outline: none;
+
+        @media (max-width: 570px) {
+            width: 70%;
+        }
     }
 
     button {
         font-size: 25px;
         font-weight: 700;
-        width: 23%;
+        width: 25%;
+        min-width: 30%;
         height: 55px;
         background-color: #54524f;
         border: 0;
@@ -948,6 +954,24 @@ picture {
         &:hover {
             background-color: #66605b;
         }
+
+        @media (max-width: 590px) {
+            font-size: 3px;
+            height: 45px;
+            background-image: url("../img/svg/share-solid.svg");
+
+            span {
+                font-size: 0;
+            }
+        }
+    }
+
+    @media (max-width: 850px) {
+        max-width: 85%;
+    }
+
+    @media (max-width: 720px) {
+        max-width: 100%
     }
 }
 
@@ -955,10 +979,10 @@ picture {
 
 .footer {
     display: flex;
+    flex-direction: column;
     height: auto;
     background-color: #7f7770;
     align-items: center;
-    position: relative;
 }
 
 .footer__wrapper {
@@ -989,6 +1013,10 @@ picture {
         @media (max-width: 1160px) {
             text-align: center;
         }
+
+        @media (max-width: 680px) {
+            width: 100%;
+        }
     }
 
     @media (max-width: 600px) {
@@ -1017,6 +1045,11 @@ picture {
     font-weight: 400;
     max-width: 70%;
     margin: 0 0 25px 0;
+
+    @media (max-width: 1160px) {
+        max-width: 100%;
+        padding: 0 15px;
+    }
 }
 
 .footer__link {
@@ -1028,10 +1061,28 @@ picture {
 }
 
 .footer__icon {
-    max-width: 35%;
+    max-width: 300px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+
+    a {
+        margin: 15px;
+        background-color: #fff;
+        border-radius: 50%;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            background-color: #d4d3d2;
+        }
+    }
 
     .icon {
         display: flex;
@@ -1039,18 +1090,21 @@ picture {
         align-items: center;
         width: 50px;
         height: 50px;
-        background-color: #fff;
-        border-radius: 50%;
 
         img {
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
         }
+    }
+
+    @media (max-width: 1160px) {
+        max-width: 100%;
+        margin: 0 auto;
     }
 }
 
 .frame__one {
-    position: absolute;
+    position: relative;
     top: 0;
     z-index: 0;
     width: 100%;
