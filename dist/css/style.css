@@ -848,7 +848,7 @@ picture {
 
 .subscribe {
   width: 100%;
-  max-width: 70%;
+  max-width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -860,8 +860,7 @@ picture {
 
 .subscribe input {
   font-size: 25px;
-  width: 60%;
-  max-width: 70%;
+  width: 90%;
   background-color: #f6f6f6;
   border: 0;
   border-right: 0;
@@ -875,10 +874,7 @@ picture {
 }
 
 .subscribe button {
-  font-size: 25px;
-  font-weight: 700;
-  width: 25%;
-  min-width: 30%;
+  width: 300px;
   height: 55px;
   background-color: #54524f;
   border: 0;
@@ -894,8 +890,20 @@ picture {
           box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
+.subscribe button span {
+  font-size: 25px;
+  font-weight: 700;
+}
+
 .subscribe button:hover {
   background-color: #66605b;
+}
+
+.fa-w-16 {
+  display: none;
+  width: 25px;
+  height: 25px;
+  margin: 0 auto;
 }
 
 .footer {
@@ -1117,6 +1125,12 @@ picture {
   }
 }
 
+@media (max-width: 970px) {
+  .subscribe button {
+    width: 200px;
+  }
+}
+
 @media (max-width: 900px) {
   .discount__textual .discount__title {
     font-size: 49px;
@@ -1144,12 +1158,6 @@ picture {
 @media (max-width: 890px) {
   .button-big {
     padding: 15px 13px;
-  }
-}
-
-@media (max-width: 850px) {
-  .subscribe {
-    max-width: 85%;
   }
 }
 
@@ -1234,6 +1242,22 @@ picture {
   .reviews {
     height: auto;
   }
+
+  .subscribe button span {
+    font-size: 0;
+  }
+
+  .subscribe button {
+    width: 100px;
+  }
+
+  .subscribe {
+    max-width: 70%;
+  }
+
+  .fa-w-16 {
+    display: initial;
+  }
 }
 
 @media (max-width: 740px) {
@@ -1249,12 +1273,6 @@ picture {
 
   .intro__content .intro__main {
     font-size: 2.7em;
-  }
-}
-
-@media (max-width: 720px) {
-  .subscribe {
-    max-width: 100%;
   }
 }
 
@@ -1288,24 +1306,6 @@ picture {
         -ms-flex-direction: column;
             flex-direction: column;
     text-align: center;
-  }
-}
-
-@media (max-width: 590px) {
-  .subscribe button {
-    font-size: 3px;
-    height: 45px;
-    background-image: url("../img/svg/share-solid.svg");
-  }
-
-  .subscribe button span {
-    font-size: 0;
-  }
-}
-
-@media (max-width: 570px) {
-  .subscribe input {
-    width: 70%;
   }
 }
 
@@ -1374,6 +1374,13 @@ picture {
   .comment__block .comment__text {
     font-size: 20px;
     max-width: 100%;
+  }
+}
+
+@media (max-width: 470px) {
+  .subscribe button {
+    width: 75px;
+    height: 45px;
   }
 }
 
