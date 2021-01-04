@@ -260,7 +260,12 @@ picture {
 }
 
 .header__inner .nav a {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   vertical-align: top;
   margin: 0 25px;
   position: relative;
@@ -443,8 +448,11 @@ picture {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100vh;
-  min-height: 600px;
-  background: url("../img/header-bg.jpg") center/cover no-repeat;
+  min-height: 800px;
+  background: url("../img/header-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .intro__content {
@@ -953,6 +961,11 @@ picture {
   width: 50%;
 }
 
+.footer__object {
+  padding: 0 15px;
+  margin: 20px 0;
+}
+
 .footer__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -961,8 +974,9 @@ picture {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0 15px;
-  margin: 20px 0;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 
 .footer__title {
@@ -986,6 +1000,11 @@ picture {
   color: #fff;
   text-decoration: none;
   line-height: 40px;
+}
+
+.footer__link:hover {
+  color: #d4d3d2;
+  text-decoration: underline;
 }
 
 .footer__icon {
@@ -1243,6 +1262,11 @@ picture {
     height: auto;
   }
 
+  .email__textual .email__title {
+    font-size: 55px;
+    margin: 0 0 40px;
+  }
+
   .subscribe button span {
     font-size: 0;
   }
@@ -1377,6 +1401,18 @@ picture {
   }
 }
 
+@media (max-width: 480px) {
+  .email__textual .email__title {
+    font-size: 45px;
+    margin: 0 0 20px;
+  }
+
+  .email__textual .email__suptitle {
+    font-size: 25px;
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 470px) {
   .subscribe button {
     width: 75px;
@@ -1394,7 +1430,7 @@ picture {
 
 .webp .leaf-right { background-image: url(../img/leaf-right.webp); }
 
-.webp .intro { background: url(../img/header-bg.webp) center/cover no-repeat; }
+.webp .intro { background: url(../img/header-bg.webp); }
 
 .webp .leaf-bg { background-image: url(../img/Shadow_.webp); }
 

@@ -203,7 +203,8 @@ picture {
         font-weight: 700;
 
         a {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             vertical-align: top;
             margin: 0 25px;
             position: relative;
@@ -386,8 +387,11 @@ picture {
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    min-height: 600px;
-    background: url("../img/header-bg.jpg") center / cover no-repeat;
+    min-height: 800px;
+    background: url("../img/header-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .intro__content {
@@ -897,6 +901,16 @@ picture {
         font-size: 75px;
         font-weight: 700;
         margin: 0 0 70px;
+
+        @media (max-width: 770px) {
+            font-size: 55px;
+            margin: 0 0 40px;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 45px;
+            margin: 0 0 20px;
+        }
     }
 
     .email__suptitle {
@@ -905,6 +919,11 @@ picture {
         font-weight: 400;
         max-width: 70%;
         margin: 0 auto 50px;
+
+        @media (max-width: 480px) {
+            font-size: 25px;
+            max-width: 100%;
+        }
     }
 }
 
@@ -1036,11 +1055,15 @@ picture {
     }
 }
 
+.footer__object {
+    padding: 0 15px;
+    margin: 20px 0;
+}
+
 .footer__item {
     display: flex;
     flex-direction: column;
-    padding: 0 15px;
-    margin: 20px 0;
+    align-items: baseline;
 }
 
 .footer__title {
@@ -1069,6 +1092,11 @@ picture {
     color: #fff;
     text-decoration: none;
     line-height: 40px;
+
+    &:hover {
+        color: #d4d3d2;
+        text-decoration: underline;
+    }
 }
 
 .footer__icon {
