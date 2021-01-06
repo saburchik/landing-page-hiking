@@ -473,29 +473,30 @@ picture {
 }
 
 .intro__content .intro__textual {
-  max-width: 805px;
+  width: 100%;
+  max-width: 50%;
 }
 
-.intro__content .intro__main {
+.intro__main {
   color: #deb37e;
-  font-size: 5.75em;
+  font-size: 92px;
   font-weight: 800;
   font-family: 'Open Sans', sans-serif;
   text-shadow: 3px -5px 10px #d3d2cd;
 }
 
-.intro__content .intro__title {
+.intro__title {
   color: #54524f;
-  font-size: 1.5em;
+  font-size: 24px;
   font-weight: 700;
   font-family: 'Open Sans', sans-serif;
   font-style: italic;
   margin: 0 0 30px 0;
 }
 
-.intro__content .intro__text {
+.intro__text {
   color: #54524f;
-  font-size: 1.3em;
+  font-size: 21px;
   font-family: 'Open Sans', sans-serif;
   font-style: italic;
   margin: 30px 0 0 0;
@@ -694,6 +695,7 @@ picture {
           align-items: center;
   position: relative;
   background-color: #99928d;
+  height: 870px;
 }
 
 .frame__fx {
@@ -749,6 +751,7 @@ picture {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 
 .explore .explore__textual {
@@ -831,6 +834,7 @@ picture {
   height: 100vh;
   min-height: 600px;
   background-color: #deb37e;
+  position: relative;
 }
 
 .email__field {
@@ -928,6 +932,7 @@ picture {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .footer__wrapper {
@@ -1074,17 +1079,11 @@ picture {
 }
 
 .frame__twoTop {
-  background: url("../img/shape-top.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
   height: 120px;
   width: 100%;
 }
 
 .frame__twoDown {
-  background: url("../img/shape-down.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
   height: 120px;
   width: 100%;
 }
@@ -1114,6 +1113,12 @@ picture {
 
   .footer__block:first-child {
     text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .footer__text {
@@ -1127,15 +1132,15 @@ picture {
   }
 }
 
-@media (max-width: 1135px) {
-  .intro__content .intro__main {
-    font-size: 5em;
-  }
-}
-
 @media (max-width: 1100px) {
   .about__text h3 {
     max-width: 80%;
+  }
+}
+
+@media (max-width: 1001px) {
+  .intro__main {
+    font-size: 62px;
   }
 }
 
@@ -1146,10 +1151,6 @@ picture {
 }
 
 @media (max-width: 990px) {
-  .intro__content .intro__main {
-    font-size: 4.5em;
-  }
-
   .column__item .item__icon {
     margin: 0 0 30px 0;
   }
@@ -1176,20 +1177,6 @@ picture {
 
   .discount__textual .discount__text {
     font-size: 24px;
-  }
-}
-
-@media (max-width: 895px) {
-  .intro__content .intro__main {
-    font-size: 3.7em;
-  }
-
-  .intro__content .intro__title {
-    font-size: 1.1em;
-  }
-
-  .intro__content .intro__text {
-    font-size: 1em;
   }
 }
 
@@ -1313,10 +1300,6 @@ picture {
     width: 150px;
     font-size: 14px;
   }
-
-  .intro__content .intro__main {
-    font-size: 2.7em;
-  }
 }
 
 @media (max-width: 700px) {
@@ -1327,6 +1310,24 @@ picture {
   .about__text h3 {
     font-size: 21px;
     max-width: 90%;
+  }
+}
+
+@media (max-width: 685px) {
+  .intro__main {
+    font-size: 50px;
+  }
+
+  .intro__title {
+    font-size: 18px;
+  }
+
+  .intro__title {
+    font-size: 14px;
+  }
+
+  .intro__text {
+    font-size: 16px;
   }
 }
 
@@ -1349,22 +1350,6 @@ picture {
         -ms-flex-direction: column;
             flex-direction: column;
     text-align: center;
-  }
-}
-
-@media (max-width: 550px) {
-  .intro__content .intro__main {
-    font-size: 2em;
-  }
-
-  .intro__content .intro__title {
-    font-size: 0.8em;
-  }
-
-  .intro__content .intro__text {
-    font-size: 0.8em;
-    margin: 20px 0 0 0;
-    width: 80%;
   }
 }
 
@@ -1421,6 +1406,10 @@ picture {
 }
 
 @media (max-width: 480px) {
+  .intro__main {
+    font-size: 27px;
+  }
+
   .email__textual .email__title {
     font-size: 45px;
     margin: 0 0 20px;
@@ -1439,9 +1428,11 @@ picture {
   }
 }
 
-@media (max-width: 340px) {
-  .intro__content .intro__main {
-    font-size: 1.5em;
+@media (max-height: 568px) {
+  .header__inner .header__logo {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50px;
+            flex: 0 0 50px;
   }
 }
 
@@ -1454,7 +1445,3 @@ picture {
 .webp .leaf-bg { background-image: url(../img/Shadow_.webp); }
 
 .webp .explore { background: url(../img/explore.webp); }
-
-.webp .frame__twoTop { background: url(../img/shape-top.webp); }
-
-.webp .frame__twoDown { background: url(../img/shape-down.webp); }
