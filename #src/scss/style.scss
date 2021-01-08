@@ -44,6 +44,28 @@ picture {
     padding: 0 15px;
 }
 
+// <FRAME
+.frame__top {
+    position: absolute;
+    top: -3px;
+    z-index: 0;
+    width: 100%;
+}
+
+.frame__down {
+    position: absolute;
+    bottom: -5px;
+    z-index: 0;
+    width: 100%;
+}
+
+.frame__image {
+    height: 120px;
+    width: 100%;
+}
+
+// FRAME/>
+
 .button-small {
     width: 220px;
     color: #776c64;
@@ -122,7 +144,8 @@ picture {
     }
 }
 
-.leaf-bg {
+// <LEAF
+.leaf__left {
     background-image: url("../img/Shadow_.png");
     background-repeat: no-repeat;
     background-position: left bottom;
@@ -139,7 +162,7 @@ picture {
     }
 }
 
-.leaf-right {
+.leaf__right {
     background-image: url("../img/leaf-right.png");
     background-repeat: no-repeat;
     background-position: right bottom;
@@ -151,6 +174,8 @@ picture {
     left: 0;
     z-index: 5;
 }
+
+// LEAF/>
 
 // block header ________________________________________________________________________________________________
 
@@ -267,7 +292,7 @@ picture {
     }
 }
 
-// <Search>
+// <SEARCH
 .search {
     display: flex;
     justify-content: center;
@@ -307,7 +332,7 @@ picture {
     }
 }
 
-// </Search>
+// SEARCH/>
 
 /* Nav toggle */
 .nav-toggle {
@@ -465,7 +490,6 @@ picture {
 
 
 // block about ____________________________________________________________________________________________
-
 .about {
     position: relative;
     background-color: #fff;
@@ -938,9 +962,22 @@ picture {
         font-weight: 400;
         font-family: 'Exo', sans-serif;
         outline: none;
+
+        &:focus {
+            outline: 0;
+            border: 2px solid #868686;
+        }
+
+        @media (max-width: 470px) {
+            border-radius: 50px;
+            width: 100%;
+            font-size: 18px;
+        }
     }
 
     button {
+        font-size: 25px;
+        font-weight: 700;
         width: 300px;
         height: 55px;
         background-color: #54524f;
@@ -953,15 +990,6 @@ picture {
         outline: none;
         box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
 
-        span {
-            font-size: 25px;
-            font-weight: 700;
-
-            @media (max-width: 770px) {
-                font-size: 0;
-            }
-        }
-
         &:hover {
             background-color: #66605b;
         }
@@ -970,18 +998,19 @@ picture {
             width: 200px;
         }
 
-        @media (max-width: 770px) {
-            width: 100px;
-        }
-
         @media (max-width: 470px) {
-            width: 75px;
-            height: 45px;
+            margin: 10px auto;
         }
     }
 
     @media (max-width: 770px) {
         max-width: 70%;
+    }
+
+    @media (max-width: 470px) {
+        display: block;
+        flex-direction: column;
+        max-width: 100%;
     }
 }
 
@@ -991,9 +1020,9 @@ picture {
     height: 25px;
     margin: 0 auto;
 
-    @media (max-width: 770px) {
-        display: initial;
-    }
+    // @media (max-width: 770px) {
+    //     display: initial;
+    // }
 }
 
 // block footer ____________________________________________________________________________________________________
@@ -1011,7 +1040,7 @@ picture {
     width: 100%;
     position: relative;
     z-index: 5;
-    padding: 150px 0 100px;
+    padding: 150px 0 75px;
 }
 
 .footer__row {
@@ -1076,7 +1105,6 @@ picture {
 
     @media (max-width: 1160px) {
         max-width: 100%;
-        padding: 0 15px;
     }
 }
 
@@ -1086,6 +1114,7 @@ picture {
     color: #fff;
     text-decoration: none;
     line-height: 40px;
+    margin: 3px 0;
 
     &:hover {
         color: #d4d3d2;
@@ -1134,41 +1163,4 @@ picture {
         max-width: 100%;
         margin: 0 auto;
     }
-}
-
-.frame__top {
-    position: absolute;
-    top: -3px;
-    z-index: 0;
-    width: 100%;
-}
-
-.frame__down {
-    position: absolute;
-    bottom: -5px;
-    z-index: 0;
-    width: 100%;
-
-}
-
-.frame__twoTop {
-    height: 120px;
-    width: 100%;
-}
-
-.frame__twoDown {
-    height: 120px;
-    width: 100%;
-}
-
-.frame__fx {
-    width: 100%;
-    position: relative;
-    z-index: 5;
-}
-
-.frame__img {
-    width: 100%;
-    height: 100vh;
-    min-height: 600px;
 }

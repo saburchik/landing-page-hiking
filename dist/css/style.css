@@ -113,6 +113,25 @@ picture {
   padding: 0 15px;
 }
 
+.frame__top {
+  position: absolute;
+  top: -3px;
+  z-index: 0;
+  width: 100%;
+}
+
+.frame__down {
+  position: absolute;
+  bottom: -5px;
+  z-index: 0;
+  width: 100%;
+}
+
+.frame__image {
+  height: 120px;
+  width: 100%;
+}
+
 .button-small {
   width: 220px;
   color: #776c64;
@@ -170,7 +189,7 @@ picture {
   background-color: #c38c49;
 }
 
-.leaf-bg {
+.leaf__left {
   background-image: url("../img/Shadow_.png");
   background-repeat: no-repeat;
   background-position: left bottom;
@@ -183,11 +202,11 @@ picture {
   z-index: 1;
 }
 
-.mountains .leaf-bg {
+.mountains .leaf__left {
   background-position: left center;
 }
 
-.leaf-right {
+.leaf__right {
   background-image: url("../img/leaf-right.png");
   background-repeat: no-repeat;
   background-position: right bottom;
@@ -886,7 +905,14 @@ picture {
   outline: none;
 }
 
+.subscribe input:focus {
+  outline: 0;
+  border: 2px solid #868686;
+}
+
 .subscribe button {
+  font-size: 25px;
+  font-weight: 700;
   width: 300px;
   height: 55px;
   background-color: #54524f;
@@ -901,11 +927,6 @@ picture {
   outline: none;
   -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
           box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
-}
-
-.subscribe button span {
-  font-size: 25px;
-  font-weight: 700;
 }
 
 .subscribe button:hover {
@@ -939,7 +960,7 @@ picture {
   width: 100%;
   position: relative;
   z-index: 5;
-  padding: 150px 0 100px;
+  padding: 150px 0 75px;
 }
 
 .footer__row {
@@ -1006,6 +1027,7 @@ picture {
   color: #fff;
   text-decoration: none;
   line-height: 40px;
+  margin: 3px 0;
 }
 
 .footer__link:hover {
@@ -1064,42 +1086,6 @@ picture {
   height: 25px;
 }
 
-.frame__top {
-  position: absolute;
-  top: -3px;
-  z-index: 0;
-  width: 100%;
-}
-
-.frame__down {
-  position: absolute;
-  bottom: -5px;
-  z-index: 0;
-  width: 100%;
-}
-
-.frame__twoTop {
-  height: 120px;
-  width: 100%;
-}
-
-.frame__twoDown {
-  height: 120px;
-  width: 100%;
-}
-
-.frame__fx {
-  width: 100%;
-  position: relative;
-  z-index: 5;
-}
-
-.frame__img {
-  width: 100%;
-  height: 100vh;
-  min-height: 600px;
-}
-
 @media (max-width: 1160px) {
   .footer__row {
     -webkit-box-orient: vertical;
@@ -1123,7 +1109,6 @@ picture {
 
   .footer__text {
     max-width: 100%;
-    padding: 0 15px;
   }
 
   .footer__icon {
@@ -1273,20 +1258,8 @@ picture {
     margin: 0 0 40px;
   }
 
-  .subscribe button span {
-    font-size: 0;
-  }
-
-  .subscribe button {
-    width: 100px;
-  }
-
   .subscribe {
     max-width: 70%;
-  }
-
-  .fa-w-16 {
-    display: initial;
   }
 }
 
@@ -1422,9 +1395,23 @@ picture {
 }
 
 @media (max-width: 470px) {
+  .subscribe input {
+    border-radius: 50px;
+    width: 100%;
+    font-size: 18px;
+  }
+
   .subscribe button {
-    width: 75px;
-    height: 45px;
+    margin: 10px auto;
+  }
+
+  .subscribe {
+    display: block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 100%;
   }
 }
 
@@ -1436,9 +1423,9 @@ picture {
   }
 }
 
-.webp .leaf-bg { background-image: url(../img/Shadow_.webp); }
+.webp .leaf__left { background-image: url(../img/Shadow_.webp); }
 
-.webp .leaf-right { background-image: url(../img/leaf-right.webp); }
+.webp .leaf__right { background-image: url(../img/leaf-right.webp); }
 
 .webp .intro { background: url(../img/header-bg.webp); }
 
