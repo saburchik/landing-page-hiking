@@ -219,6 +219,21 @@ picture {
   z-index: 5;
 }
 
+.title {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.description {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 0 auto 50px;
+  max-width: 75%;
+}
+
 .header {
   width: 100%;
   padding-top: 15px;
@@ -242,11 +257,11 @@ picture {
           transform: translate3d(0, 0, 0);
 }
 
-.header.active {
+.header--active {
   background-color: #fff;
 }
 
-.header__inner {
+.menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -258,17 +273,17 @@ picture {
           align-items: center;
 }
 
-.header__inner .header__logo {
+.menu .logo {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 75px;
           flex: 0 0 75px;
 }
 
-.header__inner .header__logo img {
+.menu .logo .logo__img {
   max-width: 100%;
 }
 
-.header__inner .nav {
+.navigation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -278,7 +293,7 @@ picture {
   font-weight: 700;
 }
 
-.header__inner .nav a {
+.navigation .nav__link {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -295,7 +310,7 @@ picture {
   transition: color 0.1s linear;
 }
 
-.header__inner .nav a:after {
+.navigation .nav__link:after {
   content: "";
   width: 100%;
   height: 3px;
@@ -311,27 +326,27 @@ picture {
   transition: opacity 0.1s linear;
 }
 
-.header__inner .nav a:hover {
+.navigation .nav__link:hover {
   color: #c3bfbc;
 }
 
-.header__inner .nav a:hover:after,
-.header__inner .nav a.active:after {
+.navigation .nav__link:hover:after,
+.navigation .nav__link.active:after {
   opacity: 1;
   display: block;
 }
 
-.header__inner .nav a:active {
+.navigation .nav__link:active {
   color: #c3bfbc;
 }
 
-.header__inner .nav.active {
+.navigation.active {
   display: block;
   -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-.search {
+.search-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -353,7 +368,7 @@ picture {
   margin-left: 25px;
 }
 
-.search input {
+.search-form .search-form__input {
   background-color: #c3bfbc;
   border: none;
   outline: none;
@@ -362,7 +377,7 @@ picture {
   padding: 5px;
 }
 
-.search button {
+.search-form .search-form__button {
   background-color: #c3bfbc;
   outline: none;
   border: none;
@@ -393,7 +408,7 @@ picture {
   outline: 0;
 }
 
-.nav-toggle_item {
+.nav-toggle__item {
   display: block;
   width: 100%;
   height: 3px;
@@ -409,8 +424,8 @@ picture {
   transition: background 0.2s linear;
 }
 
-.nav-toggle_item:before,
-.nav-toggle_item:after {
+.nav-toggle__item:before,
+.nav-toggle__item:after {
   content: "";
   width: 100%;
   height: 3px;
@@ -425,19 +440,19 @@ picture {
   transition: transform 0.2s linear, -webkit-transform 0.2s linear;
 }
 
-.nav-toggle_item:before {
+.nav-toggle__item:before {
   top: -8px;
 }
 
-.nav-toggle_item:after {
+.nav-toggle__item:after {
   bottom: -8px;
 }
 
-.nav-toggle.active .nav-toggle_item {
+.nav-toggle--active .nav-toggle__item {
   background: none;
 }
 
-.nav-toggle.active .nav-toggle_item:before {
+.nav-toggle--active .nav-toggle__item:before {
   -webkit-transform-origin: left top;
       -ms-transform-origin: left top;
           transform-origin: left top;
@@ -446,7 +461,7 @@ picture {
           transform: rotate(45deg) translateX(-2px);
 }
 
-.nav-toggle.active .nav-toggle_item:after {
+.nav-toggle--active .nav-toggle__item:after {
   -webkit-transform-origin: left bottom;
       -ms-transform-origin: left bottom;
           transform-origin: left bottom;
@@ -513,12 +528,12 @@ picture {
   margin: 0 0 30px 0;
 }
 
-.intro__text {
+.intro__description {
   color: #54524f;
   font-size: 21px;
-  font-family: 'Open Sans', sans-serif;
   font-style: italic;
-  margin: 30px 0 0 0;
+  margin: 0;
+  max-width: 100%;
 }
 
 .about {
@@ -546,19 +561,15 @@ picture {
   z-index: 5;
 }
 
-.about__text h1 {
+.about__title {
+  color: #e2a355;
   font-size: 62px;
   font-weight: 800;
-  color: #e2a355;
   margin: 0 0 20px 0;
 }
 
-.about__text h3 {
+.about__description {
   color: #7f7770;
-  font-size: 27px;
-  font-weight: 500;
-  max-width: 60%;
-  margin: 0 auto 70px;
 }
 
 .about__card {
@@ -599,28 +610,14 @@ picture {
   padding: 0 15px;
 }
 
-.card__name {
-  font-size: 30px;
-  font-weight: 700;
-  color: #fff;
+.card__title {
   margin: 0 0 25px 0;
 }
 
-.reviews .card__name {
-  font-size: 33px;
-  color: #deb37e;
-}
-
-.card__text {
+.card__description {
   font-size: 23px;
-  font-weight: 500;
-  color: #fff;
   margin: 0 0 50px 0;
-}
-
-.reviews .card__text {
-  font-size: 18px;
-  color: #333d42;
+  max-width: 100%;
 }
 
 .button__show {
@@ -682,20 +679,14 @@ picture {
   padding: 15px 50px;
 }
 
-.discount__textual .discount__title {
-  color: #fff;
-  font-size: 59px;
-  font-weight: 700;
+.discount__title {
+  font-size: 60px;
   margin: 0 0 30px;
-  max-width: 650px;
 }
 
-.discount__textual .discount__text {
-  color: #fff;
-  font-size: 30px;
-  font-weight: 500;
-  margin: 0 0 30px;
-  max-width: 600px;
+.discount__description {
+  margin: 0 0 50px;
+  max-width: 90%;
 }
 
 .mountains {
@@ -739,18 +730,14 @@ picture {
   z-index: 10;
 }
 
-.mountains__textual .mountains__title {
-  color: #fff;
-  font-size: 59px;
+.mountains__title {
+  font-size: 60px;
   font-weight: 600;
+  margin: 0 0 50px 0;
 }
 
-.mountains__textual .mountains__text {
+.mountains__description {
   color: #dbdbdb;
-  min-width: 600px;
-  font-size: 30px;
-  font-weight: 400;
-  letter-spacing: 2px;
 }
 
 .explore {
@@ -809,6 +796,23 @@ picture {
   position: relative;
 }
 
+.reviews__title {
+  color: #deb37e;
+  margin: 0 0 25px 0;
+}
+
+.comment__description {
+  color: #3f3f3f;
+  font-weight: 600;
+}
+
+.reviews__description {
+  font-size: 18px;
+  margin: 0 0 50px 0;
+  max-width: 100%;
+  color: #3f3f3f;
+}
+
 .comment {
   position: relative;
   z-index: 5;
@@ -824,13 +828,6 @@ picture {
   font-size: 100px;
   font-weight: 700;
   font-style: italic;
-}
-
-.comment__block .comment__text {
-  color: #3f3f3f;
-  font-size: 25px;
-  max-width: 60%;
-  margin: 0 auto 50px;
 }
 
 .comment__block .comment__name {
@@ -863,19 +860,9 @@ picture {
   text-align: center;
 }
 
-.email__textual .email__title {
-  color: #fff;
+.email__title {
   font-size: 75px;
-  font-weight: 700;
   margin: 0 0 70px;
-}
-
-.email__textual .email__suptitle {
-  color: #54524f;
-  font-size: 30px;
-  font-weight: 400;
-  max-width: 70%;
-  margin: 0 auto 50px;
 }
 
 .subscribe {
@@ -931,13 +918,6 @@ picture {
 
 .subscribe button:hover {
   background-color: #66605b;
-}
-
-.fa-w-16 {
-  display: none;
-  width: 25px;
-  height: 25px;
-  margin: 0 auto;
 }
 
 .footer {
@@ -1007,18 +987,13 @@ picture {
 }
 
 .footer__title {
-  font-size: 30px;
-  color: #fff;
   font-weight: 400;
   margin: 0 0 30px 0;
 }
 
-.footer__text {
-  color: #fff;
+.footer__description {
+  margin: 0 0 50px;
   font-size: 23px;
-  font-weight: 400;
-  max-width: 70%;
-  margin: 0 0 25px 0;
 }
 
 .footer__link {
@@ -1027,7 +1002,7 @@ picture {
   color: #fff;
   text-decoration: none;
   line-height: 40px;
-  margin: 3px 0;
+  margin: 0 0 5px 0;
 }
 
 .footer__link:hover {
@@ -1107,10 +1082,6 @@ picture {
             justify-content: center;
   }
 
-  .footer__text {
-    max-width: 100%;
-  }
-
   .footer__icon {
     max-width: 100%;
     margin: 0 auto;
@@ -1118,8 +1089,8 @@ picture {
 }
 
 @media (max-width: 1100px) {
-  .about__text h3 {
-    max-width: 80%;
+  .description {
+    max-width: 90%;
   }
 }
 
@@ -1139,29 +1110,11 @@ picture {
   .column__item .item__icon {
     margin: 0 0 30px 0;
   }
-
-  .card__name {
-    font-size: 27px;
-  }
-
-  .card__text {
-    font-size: 19px;
-  }
 }
 
 @media (max-width: 970px) {
   .subscribe button {
     width: 200px;
-  }
-}
-
-@media (max-width: 900px) {
-  .discount__textual .discount__title {
-    font-size: 49px;
-  }
-
-  .discount__textual .discount__text {
-    font-size: 24px;
   }
 }
 
@@ -1197,13 +1150,13 @@ picture {
     padding: 10px 0;
   }
 
-  .header__inner .nav a {
+  .navigation .nav__link {
     display: block;
     margin: 0;
     padding: 10px 20px;
   }
 
-  .header__inner .nav {
+  .navigation {
     display: none;
     width: 100%;
     position: absolute;
@@ -1212,7 +1165,7 @@ picture {
     background-color: #fff;
   }
 
-  .search {
+  .search-form {
     margin: 10px 20px;
   }
 
@@ -1253,11 +1206,6 @@ picture {
     height: auto;
   }
 
-  .email__textual .email__title {
-    font-size: 55px;
-    margin: 0 0 40px;
-  }
-
   .subscribe {
     max-width: 70%;
   }
@@ -1276,13 +1224,13 @@ picture {
 }
 
 @media (max-width: 700px) {
-  .about__text h1 {
-    font-size: 50px;
+  .title {
+    font-size: 30px;
+    margin: 0 0 30px 0;
   }
 
-  .about__text h3 {
+  .description {
     font-size: 21px;
-    max-width: 90%;
   }
 }
 
@@ -1298,21 +1246,11 @@ picture {
   .intro__title {
     font-size: 14px;
   }
-
-  .intro__text {
-    font-size: 16px;
-  }
 }
 
 @media (max-width: 680px) {
   .footer__block:first-child {
     width: 100%;
-  }
-}
-
-@media (max-width: 650px) {
-  .mountains__textual .mountains__text {
-    min-width: 100%;
   }
 }
 
@@ -1341,56 +1279,20 @@ picture {
 }
 
 @media (max-width: 490px) {
-  .about__text h1 {
-    font-size: 35px;
-    margin: 0 0 15px 0;
-  }
-
-  .about__text h3 {
-    font-size: 14px;
+  .description {
+    font-size: 18px;
     margin: 0 auto 40px;
-    max-width: 95%;
+    max-width: 100%;
   }
 
   .button__show {
     padding: 0 0 75px;
-  }
-
-  .discount__textual .discount__title {
-    font-size: 30px;
-  }
-
-  .discount__textual .discount__text {
-    font-size: 16px;
-  }
-
-  .mountains__textual .mountains__title {
-    font-size: 48px;
-  }
-
-  .mountains__textual .mountains__text {
-    font-size: 25px;
-  }
-
-  .comment__block .comment__text {
-    font-size: 20px;
-    max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .intro__main {
     font-size: 27px;
-  }
-
-  .email__textual .email__title {
-    font-size: 45px;
-    margin: 0 0 20px;
-  }
-
-  .email__textual .email__suptitle {
-    font-size: 25px;
-    max-width: 100%;
   }
 }
 
@@ -1416,7 +1318,7 @@ picture {
 }
 
 @media (max-height: 568px) {
-  .header__inner .header__logo {
+  .menu .logo {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 50px;
             flex: 0 0 50px;

@@ -1,17 +1,29 @@
 <header class="header" id="header">
-
     <div class="container">
-        <div class="header__inner">
-            <div class="header__logo" data-scroll="#intro"><a href=""><img src="img/logo.png" alt=""></a></div>
-            <nav class="nav" id="nav"><a href="">HOME</a><a href="">MENU</a><a href="">OUR STORY</a><a href="">CONTACT
-                    US</a>
-                <form class="search">
-                    <div><input type="search" name="search"><button type="submit"><i class="fas fa-search"></i></button>
-                    </div>
-                </form>
-            </nav><button class="nav-toggle" id="nav_toggle" type="button">
-                <span class="nav-toggle_item">Menu</span></button>
-        </div>
-    </div>
 
+        <div class="menu">
+            <div class="logo" data-scroll="#intro">
+                <a class="logo__link" href="#">
+                    <img class="logo__img" src="img/logo.png" alt="">
+                </a>
+            </div>
+
+            <nav class="navigation" id="navigation">
+                <!-- The correct to write <ul><li><a></a></li></ul>, But, I don't know. I have the all okay -->
+                <a class="nav__link nav__link--active" href="">HOME</a>
+                <a class="nav__link" href="">MENU</a>
+                <a class="nav__link" href="">OUR STORY</a>
+                <a class="nav__link" href="">CONTACT US</a>
+                <form class="search-form">
+                    <input class="search-form__input" type="search" name="search">
+                    <button class="search-form__button" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </nav>
+
+            <button class="nav-toggle" id="nav-toggle" type="button">
+                <span class="nav-toggle__item">Menu</span>
+            </button>
+        </div>
+
+    </div>
 </header>

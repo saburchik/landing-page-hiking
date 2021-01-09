@@ -48,7 +48,7 @@ $(function () {
             blockId = $(this).data('scroll'),
             blockOffset = $(blockId).offset().top;
 
-        $("#nav a").removeClass("active");
+        $("#navigation .nav__link").removeClass("active");
         $this.addClass("active");
 
         $("html, body").animate({
@@ -58,12 +58,12 @@ $(function () {
 
 
     /* Menu nav toggle */
-    $("#nav_toggle").on("click", function (event) {
+    $("#nav-toggle").on("click", function (event) {
         event.preventDefault();
 
-        $(this).toggleClass("active");
-        $("#nav").toggleClass("active");
-        $(header).toggleClass("active");
+        $(this).toggleClass("nav-toggle--active");
+        $("#navigation").toggleClass("active");
+        $(header).toggleClass("header--active");
     });
 
 });

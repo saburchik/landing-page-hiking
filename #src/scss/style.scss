@@ -177,6 +177,43 @@ picture {
 
 // LEAF/>
 
+// TITLE
+.title {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+
+    @media (max-width: 700px) {
+        font-size: 30px;
+        margin: 0 0 30px 0;
+    }
+}
+
+// Description
+.description {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 0 auto 50px;
+    // margin shouldn't be in the block of BEM methodology
+    max-width: 75%;
+
+    @media (max-width: 1100px) {
+        max-width: 90%;
+    }
+
+    @media (max-width: 700px) {
+        font-size: 21px;
+    }
+
+    @media (max-width: 490px) {
+        font-size: 18px;
+        margin: 0 auto 40px;
+        max-width: 100%;
+    }
+}
+
 // block header ________________________________________________________________________________________________
 
 .header {
@@ -204,19 +241,19 @@ picture {
     transform: translate3d(0, 0, 0);
 }
 
-.header.active {
+.header--active {
     background-color: #fff;
 }
 
-.header__inner {
+.menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    .header__logo {
+    .logo {
         flex: 0 0 75px;
 
-        img {
+        .logo__img {
             max-width: 100%;
         }
 
@@ -224,76 +261,76 @@ picture {
             flex: 0 0 50px;
         }
     }
+}
 
-    .nav {
-        display: flex;
-        align-self: center;
-        font-size: 16px;
-        font-weight: 700;
+.navigation {
+    display: flex;
+    align-self: center;
+    font-size: 16px;
+    font-weight: 700;
 
-        a {
-            display: inline-flex;
-            align-items: center;
-            vertical-align: top;
-            margin: 0 25px;
-            position: relative;
-            color: #54524f;
-            text-decoration: none;
-            transition: color 0.1s linear;
+    .nav__link {
+        display: inline-flex;
+        align-items: center;
+        vertical-align: top;
+        margin: 0 25px;
+        position: relative;
+        color: #54524f;
+        text-decoration: none;
+        transition: color 0.1s linear;
 
-            &:after {
-                content: "";
-                width: 100%;
-                height: 3px;
-                display: block;
-                background-color: #c3bfbc;
-                opacity: 0;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                z-index: 1;
-                transition: opacity 0.1s linear;
-            }
-
-            &:hover {
-                color: #c3bfbc;
-            }
-
-            &:hover:after,
-            &.active:after {
-                opacity: 1;
-                display: block;
-            }
-
-            &:active {
-                color: #c3bfbc;
-            }
-
-            @media (max-width: 770px) {
-                display: block;
-                margin: 0;
-                padding: 10px 20px;
-            }
-        }
-
-        @media (max-width: 770px) {
-            display: none;
+        &:after {
+            content: "";
             width: 100%;
+            height: 3px;
+            display: block;
+            background-color: #c3bfbc;
+            opacity: 0;
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #fff;
+            z-index: 1;
+            transition: opacity 0.1s linear;
+        }
+
+        &:hover {
+            color: #c3bfbc;
+        }
+
+        &:hover:after,
+        &.active:after {
+            opacity: 1;
+            display: block;
+        }
+
+        &:active {
+            color: #c3bfbc;
+        }
+
+        @media (max-width: 770px) {
+            display: block;
+            margin: 0;
+            padding: 10px 20px;
         }
     }
 
-    .nav.active {
-        display: block;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+    @media (max-width: 770px) {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
     }
 }
 
+.navigation.active {
+    display: block;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+}
+
 // <SEARCH
-.search {
+.search-form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -308,7 +345,7 @@ picture {
     outline: none;
     margin-left: 25px;
 
-    input {
+    .search-form__input {
         background-color: #c3bfbc;
         border: none;
         outline: none;
@@ -317,7 +354,7 @@ picture {
         padding: 5px;
     }
 
-    button {
+    .search-form__button {
         background-color: #c3bfbc;
         outline: none;
         border: none;
@@ -358,7 +395,7 @@ picture {
     }
 }
 
-.nav-toggle_item {
+.nav-toggle__item {
     display: block;
     width: 100%;
     height: 3px;
@@ -395,16 +432,16 @@ picture {
     }
 }
 
-.nav-toggle.active .nav-toggle_item {
+.nav-toggle--active .nav-toggle__item {
     background: none;
 }
 
-.nav-toggle.active .nav-toggle_item:before {
+.nav-toggle--active .nav-toggle__item:before {
     transform-origin: left top;
     transform: rotate(45deg) translateX(-2px);
 }
 
-.nav-toggle.active .nav-toggle_item:after {
+.nav-toggle--active .nav-toggle__item:after {
     transform-origin: left bottom;
     transform: rotate(-45deg) translateX(-3px);
 }
@@ -476,16 +513,12 @@ picture {
     }
 }
 
-.intro__text {
+.intro__description {
     color: #54524f;
     font-size: 21px;
-    font-family: 'Open Sans', sans-serif;
     font-style: italic;
-    margin: 30px 0 0 0;
-
-    @media (max-width: 685px) {
-        font-size: 16px;
-    }
+    margin: 0;
+    max-width: 100%;
 }
 
 
@@ -513,45 +546,17 @@ picture {
     text-align: center;
     position: relative;
     z-index: 5;
+}
 
-    h1 {
-        font-size: 62px;
-        font-weight: 800;
-        color: #e2a355;
-        margin: 0 0 20px 0;
+.about__title {
+    color: #e2a355;
+    font-size: 62px;
+    font-weight: 800;
+    margin: 0 0 20px 0;
+}
 
-        @media (max-width: 700px) {
-            font-size: 50px;
-        }
-
-        @media (max-width: 490px) {
-            font-size: 35px;
-            margin: 0 0 15px 0;
-        }
-    }
-
-    h3 {
-        color: #7f7770;
-        font-size: 27px;
-        font-weight: 500;
-        max-width: 60%;
-        margin: 0 auto 70px;
-
-        @media (max-width: 1100px) {
-            max-width: 80%;
-        }
-
-        @media (max-width: 700px) {
-            font-size: 21px;
-            max-width: 90%;
-        }
-
-        @media (max-width: 490px) {
-            font-size: 14px;
-            margin: 0 auto 40px;
-            max-width: 95%;
-        }
-    }
+.about__description {
+    color: #7f7770;
 }
 
 .about__card {
@@ -605,36 +610,14 @@ picture {
     padding: 0 15px;
 }
 
-.card__name {
-    font-size: 30px;
-    font-weight: 700;
-    color: #fff;
+.card__title {
     margin: 0 0 25px 0;
-
-    .reviews & {
-        font-size: 33px;
-        color: #deb37e;
-    }
-
-    @media (max-width: 990px) {
-        font-size: 27px;
-    }
 }
 
-.card__text {
+.card__description {
     font-size: 23px;
-    font-weight: 500;
-    color: #fff;
     margin: 0 0 50px 0;
-
-    .reviews & {
-        font-size: 18px;
-        color: #333d42;
-    }
-
-    @media (max-width: 990px) {
-        font-size: 19px;
-    }
+    max-width: 100%;
 }
 
 .button__show {
@@ -685,41 +668,19 @@ picture {
     width: 50%;
     padding: 15px 50px;
 
-    .discount__title {
-        color: #fff;
-        font-size: 59px;
-        font-weight: 700;
-        margin: 0 0 30px;
-        max-width: 650px;
-
-        @media (max-width: 900px) {
-            font-size: 49px;
-        }
-
-        @media (max-width: 490px) {
-            font-size: 30px;
-        }
-    }
-
-    .discount__text {
-        color: #fff;
-        font-size: 30px;
-        font-weight: 500;
-        margin: 0 0 30px;
-        max-width: 600px;
-
-        @media (max-width: 900px) {
-            font-size: 24px;
-        }
-
-        @media (max-width: 490px) {
-            font-size: 16px;
-        }
-    }
-
     @media (max-width: 530px) {
         padding: 15px;
     }
+}
+
+.discount__title {
+    font-size: 60px;
+    margin: 0 0 30px;
+}
+
+.discount__description {
+    margin: 0 0 50px;
+    max-width: 90%;
 }
 
 @media (max-width: 770px) {
@@ -760,32 +721,16 @@ picture {
     position: absolute;
     align-items: center;
     z-index: 10;
+}
 
-    .mountains__title {
-        color: #fff;
-        font-size: 59px;
-        font-weight: 600;
+.mountains__title {
+    font-size: 60px;
+    font-weight: 600;
+    margin: 0 0 50px 0;
+}
 
-        @media (max-width: 490px) {
-            font-size: 48px;
-        }
-    }
-
-    .mountains__text {
-        color: #dbdbdb;
-        min-width: 600px;
-        font-size: 30px;
-        font-weight: 400;
-        letter-spacing: 2px;
-
-        @media (max-width: 650px) {
-            min-width: 100%;
-        }
-
-        @media (max-width: 490px) {
-            font-size: 25px;
-        }
-    }
+.mountains__description {
+    color: #dbdbdb;
 }
 
 // block explore _________________________________________________________________________________________________________
@@ -855,6 +800,23 @@ picture {
     }
 }
 
+.reviews__title {
+    color: #deb37e;
+    margin: 0 0 25px 0;
+}
+
+.comment__description {
+    color: #3f3f3f;
+    font-weight: 600;
+}
+
+.reviews__description {
+    font-size: 18px;
+    margin: 0 0 50px 0;
+    max-width: 100%;
+    color: #3f3f3f;
+}
+
 .comment {
     position: relative;
     z-index: 5;
@@ -869,18 +831,6 @@ picture {
         font-size: 100px;
         font-weight: 700;
         font-style: italic;
-    }
-
-    .comment__text {
-        color: #3f3f3f;
-        font-size: 25px;
-        max-width: 60%;
-        margin: 0 auto 50px;
-
-        @media (max-width: 490px) {
-            font-size: 20px;
-            max-width: 100%;
-        }
     }
 
     .comment__name {
@@ -909,37 +859,11 @@ picture {
     text-align: center;
 }
 
-.email__textual {
+.email__textual {}
 
-    .email__title {
-        color: #fff;
-        font-size: 75px;
-        font-weight: 700;
-        margin: 0 0 70px;
-
-        @media (max-width: 770px) {
-            font-size: 55px;
-            margin: 0 0 40px;
-        }
-
-        @media (max-width: 480px) {
-            font-size: 45px;
-            margin: 0 0 20px;
-        }
-    }
-
-    .email__suptitle {
-        color: #54524f;
-        font-size: 30px;
-        font-weight: 400;
-        max-width: 70%;
-        margin: 0 auto 50px;
-
-        @media (max-width: 480px) {
-            font-size: 25px;
-            max-width: 100%;
-        }
-    }
+.email__title {
+    font-size: 75px;
+    margin: 0 0 70px;
 }
 
 .subscribe {
@@ -1014,17 +938,6 @@ picture {
     }
 }
 
-.fa-w-16 {
-    display: none;
-    width: 25px;
-    height: 25px;
-    margin: 0 auto;
-
-    // @media (max-width: 770px) {
-    //     display: initial;
-    // }
-}
-
 // block footer ____________________________________________________________________________________________________
 
 .footer {
@@ -1090,22 +1003,13 @@ picture {
 }
 
 .footer__title {
-    font-size: 30px;
-    color: #fff;
     font-weight: 400;
     margin: 0 0 30px 0;
 }
 
-.footer__text {
-    color: #fff;
+.footer__description {
+    margin: 0 0 50px;
     font-size: 23px;
-    font-weight: 400;
-    max-width: 70%;
-    margin: 0 0 25px 0;
-
-    @media (max-width: 1160px) {
-        max-width: 100%;
-    }
 }
 
 .footer__link {
@@ -1114,7 +1018,7 @@ picture {
     color: #fff;
     text-decoration: none;
     line-height: 40px;
-    margin: 3px 0;
+    margin: 0 0 5px 0;
 
     &:hover {
         color: #d4d3d2;
