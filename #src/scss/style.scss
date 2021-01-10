@@ -66,83 +66,31 @@ picture {
 
 // FRAME/>
 
-.button-small {
-    width: 220px;
-    color: #776c64;
-    background-color: #fcfcfc;
-    border-radius: 30px;
-    font-size: 25px;
-    font-weight: 800;
-    padding: 10px 13px;
-    outline: 0;
+// <BUTTON
+.button {
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 50px;
     border: 0;
-    box-shadow: 3px -5px 10px #d3d2cd;
     cursor: pointer;
-    transition: .1s linear;
-
-    &:hover {
-        color: #fcfcfc;
-        background-color: #deb37e;
-    }
-
-    @media (max-width: 740px) {
-        width: 200px;
-        font-size: 16px;
-    }
-
-    @media (max-width: 740px) {
-        width: 150px;
-        font-size: 14px;
-    }
-}
-
-.button-big {
-    width: 30%;
-    min-width: 270px;
+    font-size: 25px;
+    font-weight: 700;
     color: #fff;
     background-color: #7f7770;
-    border-radius: 50px;
-    font-size: 23px;
-    font-weight: 700;
-    padding: 20px 13px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    transition: background .1s linear;
+    letter-spacing: 3px;
     outline: 0;
-    border: 0;
-    cursor: pointer;
-    transition: .1s linear;
-    letter-spacing: 5px;
 
-    &:hover {
-        background-color: #66605b;
-    }
-
-    .discount__button & {
-        color: #fff;
-        font-size: 30px;
-        font-weight: 700;
-        width: 45%;
-        background-color: #e2a355;
-
-        &:hover {
-            background-color: #c38c49;
-        }
-
-        @media (max-width: 530px) {
-            font-size: 20px;
-        }
-    }
-
-    @media (max-width: 890px) {
-        padding: 15px 13px;
-    }
-
-    @media (max-width: 530px) {
-        font-size: 20px;
-    }
-
-    @media (max-width: 770px) {
-        width: 40%;
+    @media (max-width: 480px) {
+        font-size: 18px;
+        width: 250px;
     }
 }
+
+// BUTTON/>
 
 // <LEAF
 .leaf__left {
@@ -513,6 +461,25 @@ picture {
     }
 }
 
+.intro__button {
+    width: 250px;
+    font-weight: 800;
+    color: #7f7770;
+    background-color: #fff;
+    letter-spacing: 0;
+    padding: 10px 20px;
+    margin: 0 0 25px 0;
+
+    &:hover {
+        color: #fff;
+        background-color: #7f7770;
+    }
+
+    @media (max-width: 480px) {
+        width: 200px;
+    }
+}
+
 .intro__description {
     color: #54524f;
     font-size: 21px;
@@ -557,6 +524,17 @@ picture {
 
 .about__description {
     color: #7f7770;
+}
+
+.about__button {
+    width: 300px;
+    font-size: 23px;
+    font-weight: 800;
+    padding: 15px 25px;
+
+    &:hover {
+        background-color: #605a55;
+    }
 }
 
 .about__card {
@@ -620,7 +598,7 @@ picture {
     max-width: 100%;
 }
 
-.button__show {
+.about__button--place {
     display: flex;
     justify-content: center;
     position: relative;
@@ -681,6 +659,17 @@ picture {
 .discount__description {
     margin: 0 0 50px;
     max-width: 90%;
+}
+
+.discount__button {
+    width: 350px;
+    background-color: #e2a355;
+    padding: 15px 15px;
+    font-size: 30px;
+
+    &:hover {
+        background-color: #b48142;
+    }
 }
 
 @media (max-width: 770px) {
@@ -859,7 +848,11 @@ picture {
     text-align: center;
 }
 
-.email__textual {}
+.email__sub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .email__title {
     font-size: 75px;
@@ -868,73 +861,47 @@ picture {
 
 .subscribe {
     width: 100%;
-    max-width: 50%;
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
 
     input {
         font-size: 25px;
-        width: 90%;
+        width: 500px;
         background-color: #f6f6f6;
         border: 0;
         border-right: 0;
         border-radius: 50px 0px 0px 50px;
         padding: 10px 20px;
         color: #868686;
-        font-size: 16px;
+        font-size: 25px;
         font-weight: 400;
         font-family: 'Exo', sans-serif;
         outline: none;
 
-        &:focus {
-            outline: 0;
-            border: 2px solid #868686;
+        @media (max-width: 770px) {
+            border-radius: 50px;
         }
 
-        @media (max-width: 470px) {
-            border-radius: 50px;
-            width: 100%;
+        @media (max-width: 580px) {
+            width: 300px;
             font-size: 18px;
         }
     }
 
-    button {
-        font-size: 25px;
-        font-weight: 700;
-        width: 300px;
-        height: 55px;
-        background-color: #54524f;
-        border: 0;
-        border-radius: 50px;
-        color: #fff;
-        cursor: pointer;
-        transition: background 0.2s linear;
-        margin: 0 -30px 0;
-        outline: none;
-        box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
-
-        &:hover {
-            background-color: #66605b;
-        }
-
-        @media (max-width: 970px) {
-            width: 200px;
-        }
-
-        @media (max-width: 470px) {
-            margin: 10px auto;
-        }
-    }
-
     @media (max-width: 770px) {
-        max-width: 70%;
-    }
-
-    @media (max-width: 470px) {
-        display: block;
+        display: flex;
         flex-direction: column;
-        max-width: 100%;
+        align-items: center;
+    }
+}
+
+.email__button {
+    width: 200px;
+    background-color: #54524f;
+    letter-spacing: 0;
+    padding: 10px 20px;
+    margin: 0 -30px 0;
+
+    &:hover {
+        background-color: #66605b;
     }
 }
 

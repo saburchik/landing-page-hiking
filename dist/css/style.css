@@ -132,61 +132,24 @@ picture {
   width: 100%;
 }
 
-.button-small {
-  width: 220px;
-  color: #776c64;
-  background-color: #fcfcfc;
-  border-radius: 30px;
-  font-size: 25px;
-  font-weight: 800;
-  padding: 10px 13px;
-  outline: 0;
+.button {
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50px;
   border: 0;
-  -webkit-box-shadow: 3px -5px 10px #d3d2cd;
-          box-shadow: 3px -5px 10px #d3d2cd;
   cursor: pointer;
-  -webkit-transition: .1s linear;
-  -o-transition: .1s linear;
-  transition: .1s linear;
-}
-
-.button-small:hover {
-  color: #fcfcfc;
-  background-color: #deb37e;
-}
-
-.button-big {
-  width: 30%;
-  min-width: 270px;
+  font-size: 25px;
+  font-weight: 700;
   color: #fff;
   background-color: #7f7770;
-  border-radius: 50px;
-  font-size: 23px;
-  font-weight: 700;
-  padding: 20px 13px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  -webkit-transition: background .1s linear;
+  -o-transition: background .1s linear;
+  transition: background .1s linear;
+  letter-spacing: 3px;
   outline: 0;
-  border: 0;
-  cursor: pointer;
-  -webkit-transition: .1s linear;
-  -o-transition: .1s linear;
-  transition: .1s linear;
-  letter-spacing: 5px;
-}
-
-.button-big:hover {
-  background-color: #66605b;
-}
-
-.discount__button .button-big {
-  color: #fff;
-  font-size: 30px;
-  font-weight: 700;
-  width: 45%;
-  background-color: #e2a355;
-}
-
-.discount__button .button-big:hover {
-  background-color: #c38c49;
 }
 
 .leaf__left {
@@ -528,6 +491,21 @@ picture {
   margin: 0 0 30px 0;
 }
 
+.intro__button {
+  width: 250px;
+  font-weight: 800;
+  color: #7f7770;
+  background-color: #fff;
+  letter-spacing: 0;
+  padding: 10px 20px;
+  margin: 0 0 25px 0;
+}
+
+.intro__button:hover {
+  color: #fff;
+  background-color: #7f7770;
+}
+
 .intro__description {
   color: #54524f;
   font-size: 21px;
@@ -570,6 +548,17 @@ picture {
 
 .about__description {
   color: #7f7770;
+}
+
+.about__button {
+  width: 300px;
+  font-size: 23px;
+  font-weight: 800;
+  padding: 15px 25px;
+}
+
+.about__button:hover {
+  background-color: #605a55;
 }
 
 .about__card {
@@ -620,7 +609,7 @@ picture {
   max-width: 100%;
 }
 
-.button__show {
+.about__button--place {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -687,6 +676,17 @@ picture {
 .discount__description {
   margin: 0 0 50px;
   max-width: 90%;
+}
+
+.discount__button {
+  width: 350px;
+  background-color: #e2a355;
+  padding: 15px 15px;
+  font-size: 30px;
+}
+
+.discount__button:hover {
+  background-color: #b48142;
 }
 
 .mountains {
@@ -860,6 +860,18 @@ picture {
   text-align: center;
 }
 
+.email__sub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .email__title {
   font-size: 75px;
   margin: 0 0 70px;
@@ -867,56 +879,32 @@ picture {
 
 .subscribe {
   width: 100%;
-  max-width: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 auto;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .subscribe input {
   font-size: 25px;
-  width: 90%;
+  width: 500px;
   background-color: #f6f6f6;
   border: 0;
   border-right: 0;
   border-radius: 50px 0px 0px 50px;
   padding: 10px 20px;
   color: #868686;
-  font-size: 16px;
+  font-size: 25px;
   font-weight: 400;
   font-family: 'Exo', sans-serif;
   outline: none;
 }
 
-.subscribe input:focus {
-  outline: 0;
-  border: 2px solid #868686;
-}
-
-.subscribe button {
-  font-size: 25px;
-  font-weight: 700;
-  width: 300px;
-  height: 55px;
+.email__button {
+  width: 200px;
   background-color: #54524f;
-  border: 0;
-  border-radius: 50px;
-  color: #fff;
-  cursor: pointer;
-  -webkit-transition: background 0.2s linear;
-  -o-transition: background 0.2s linear;
-  transition: background 0.2s linear;
+  letter-spacing: 0;
+  padding: 10px 20px;
   margin: 0 -30px 0;
-  outline: none;
-  -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
-.subscribe button:hover {
+.email__button:hover {
   background-color: #66605b;
 }
 
@@ -1112,18 +1100,6 @@ picture {
   }
 }
 
-@media (max-width: 970px) {
-  .subscribe button {
-    width: 200px;
-  }
-}
-
-@media (max-width: 890px) {
-  .button-big {
-    padding: 15px 13px;
-  }
-}
-
 @media (max-width: 775px) {
   .explore .explore__textual {
     text-align: center;
@@ -1142,10 +1118,6 @@ picture {
 }
 
 @media (max-width: 770px) {
-  .button-big {
-    width: 40%;
-  }
-
   .header {
     padding: 10px 0;
   }
@@ -1206,20 +1178,21 @@ picture {
     height: auto;
   }
 
+  .subscribe input {
+    border-radius: 50px;
+  }
+
   .subscribe {
-    max-width: 70%;
-  }
-}
-
-@media (max-width: 740px) {
-  .button-small {
-    width: 200px;
-    font-size: 16px;
-  }
-
-  .button-small {
-    width: 150px;
-    font-size: 14px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -1264,15 +1237,14 @@ picture {
   }
 }
 
+@media (max-width: 580px) {
+  .subscribe input {
+    width: 300px;
+    font-size: 18px;
+  }
+}
+
 @media (max-width: 530px) {
-  .discount__button .button-big {
-    font-size: 20px;
-  }
-
-  .button-big {
-    font-size: 20px;
-  }
-
   .discount__textual {
     padding: 15px;
   }
@@ -1285,35 +1257,23 @@ picture {
     max-width: 100%;
   }
 
-  .button__show {
+  .about__button--place {
     padding: 0 0 75px;
   }
 }
 
 @media (max-width: 480px) {
+  .button {
+    font-size: 18px;
+    width: 250px;
+  }
+
   .intro__main {
     font-size: 27px;
   }
-}
 
-@media (max-width: 470px) {
-  .subscribe input {
-    border-radius: 50px;
-    width: 100%;
-    font-size: 18px;
-  }
-
-  .subscribe button {
-    margin: 10px auto;
-  }
-
-  .subscribe {
-    display: block;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    max-width: 100%;
+  .intro__button {
+    width: 200px;
   }
 }
 
