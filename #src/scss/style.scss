@@ -418,17 +418,15 @@ picture {
     z-index: 50;
 
     .intro__textual {
-        width: 100%;
-        max-width: 50%;
+        width: 50%;
     }
 }
 
 
-.intro__main {
+.intro__title {
     color: #deb37e;
     font-size: 92px;
     font-weight: 800;
-    font-family: 'Open Sans', sans-serif;
     text-shadow: 3px -5px 10px #d3d2cd;
 
     @media (max-width: 1001px) {
@@ -444,20 +442,20 @@ picture {
     }
 }
 
-.intro__title {
+.intro__suptitle {
     color: #54524f;
     font-size: 24px;
     font-weight: 700;
-    font-family: 'Open Sans', sans-serif;
     font-style: italic;
-    margin: 0 0 30px 0;
+    margin: 0 0 50px 0;
 
     @media (max-width: 685px) {
         font-size: 18px;
     }
 
-    @media (max-width: 685px) {
+    @media (max-width: 480px) {
         font-size: 14px;
+        margin: 0 0 30px 0;
     }
 }
 
@@ -509,7 +507,16 @@ picture {
     z-index: 1;
 }
 
-.about__text {
+.about__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+.textual-area {
     text-align: center;
     position: relative;
     z-index: 5;
@@ -531,30 +538,32 @@ picture {
     font-size: 23px;
     font-weight: 800;
     padding: 15px 25px;
+    margin: 0 0 150px;
 
     &:hover {
         background-color: #605a55;
     }
+
+    @media (max-width: 490px) {
+        margin: 0 0 75px;
+    }
 }
 
-.about__card {
+.cards {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    position: relative;
-    z-index: 5;
-    margin: 0 0 40px 0;
+    margin: 0 0 50px 0;
 
     @media (max-width: 770px) {
         justify-content: center;
     }
 }
 
-.column__item {
+.cards__item {
     width: 30%;
     height: auto;
-    margin: 20px 0;
     background-color: #7f7770;
 
     .reviews & {
@@ -572,7 +581,7 @@ picture {
     }
 }
 
-.column__item .item__icon {
+.cards__item .item__icon {
     width: 100%;
     height: auto;
     margin: 0 0 50px 0;
@@ -598,21 +607,9 @@ picture {
     max-width: 100%;
 }
 
-.about__button--place {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    z-index: 5;
-    padding: 0 0 150px;
-
-    @media (max-width: 490px) {
-        padding: 0 0 75px;
-    }
-}
-
 // discount ______________________________________________________________________________________________________
 
-.discount__wrapper {
+.discount__content {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -639,7 +636,7 @@ picture {
     }
 }
 
-.discount__textual {
+.discount__textual-area {
     display: flex;
     justify-content: center;
     flex-direction: column;

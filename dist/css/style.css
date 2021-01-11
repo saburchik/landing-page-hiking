@@ -470,25 +470,22 @@ picture {
 }
 
 .intro__content .intro__textual {
-  width: 100%;
-  max-width: 50%;
-}
-
-.intro__main {
-  color: #deb37e;
-  font-size: 92px;
-  font-weight: 800;
-  font-family: 'Open Sans', sans-serif;
-  text-shadow: 3px -5px 10px #d3d2cd;
+  width: 50%;
 }
 
 .intro__title {
+  color: #deb37e;
+  font-size: 92px;
+  font-weight: 800;
+  text-shadow: 3px -5px 10px #d3d2cd;
+}
+
+.intro__suptitle {
   color: #54524f;
   font-size: 24px;
   font-weight: 700;
-  font-family: 'Open Sans', sans-serif;
   font-style: italic;
-  margin: 0 0 30px 0;
+  margin: 0 0 50px 0;
 }
 
 .intro__button {
@@ -533,7 +530,23 @@ picture {
   z-index: 1;
 }
 
-.about__text {
+.about__content {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+.textual-area {
   text-align: center;
   position: relative;
   z-index: 5;
@@ -555,13 +568,14 @@ picture {
   font-size: 23px;
   font-weight: 800;
   padding: 15px 25px;
+  margin: 0 0 150px;
 }
 
 .about__button:hover {
   background-color: #605a55;
 }
 
-.about__card {
+.cards {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -571,23 +585,20 @@ picture {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  position: relative;
-  z-index: 5;
-  margin: 0 0 40px 0;
+  margin: 0 0 50px 0;
 }
 
-.column__item {
+.cards__item {
   width: 30%;
   height: auto;
-  margin: 20px 0;
   background-color: #7f7770;
 }
 
-.reviews .column__item {
+.reviews .cards__item {
   background-color: transparent;
 }
 
-.column__item .item__icon {
+.cards__item .item__icon {
   width: 100%;
   height: auto;
   margin: 0 0 50px 0;
@@ -609,19 +620,7 @@ picture {
   max-width: 100%;
 }
 
-.about__button--place {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: relative;
-  z-index: 5;
-  padding: 0 0 150px;
-}
-
-.discount__wrapper {
+.discount__content {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -653,7 +652,7 @@ picture {
      object-fit: cover;
 }
 
-.discount__textual {
+.discount__textual-area {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1083,7 +1082,7 @@ picture {
 }
 
 @media (max-width: 1001px) {
-  .intro__main {
+  .intro__title {
     font-size: 62px;
   }
 }
@@ -1095,7 +1094,7 @@ picture {
 }
 
 @media (max-width: 990px) {
-  .column__item .item__icon {
+  .cards__item .item__icon {
     margin: 0 0 30px 0;
   }
 }
@@ -1145,23 +1144,23 @@ picture {
     display: block;
   }
 
-  .about__card {
+  .cards {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
 
-  .reviews .column__item {
+  .reviews .cards__item {
     text-align: center;
   }
 
-  .column__item {
+  .cards__item {
     width: 100%;
     max-width: 410px;
     margin-bottom: 30px;
   }
 
-  .discount__wrapper {
+  .discount__content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1208,16 +1207,12 @@ picture {
 }
 
 @media (max-width: 685px) {
-  .intro__main {
+  .intro__title {
     font-size: 50px;
   }
 
-  .intro__title {
+  .intro__suptitle {
     font-size: 18px;
-  }
-
-  .intro__title {
-    font-size: 14px;
   }
 }
 
@@ -1245,7 +1240,7 @@ picture {
 }
 
 @media (max-width: 530px) {
-  .discount__textual {
+  .discount__textual-area {
     padding: 15px;
   }
 }
@@ -1257,8 +1252,8 @@ picture {
     max-width: 100%;
   }
 
-  .about__button--place {
-    padding: 0 0 75px;
+  .about__button {
+    margin: 0 0 75px;
   }
 }
 
@@ -1268,8 +1263,13 @@ picture {
     width: 250px;
   }
 
-  .intro__main {
+  .intro__title {
     font-size: 27px;
+  }
+
+  .intro__suptitle {
+    font-size: 14px;
+    margin: 0 0 30px 0;
   }
 
   .intro__button {
