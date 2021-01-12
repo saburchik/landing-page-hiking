@@ -581,7 +581,7 @@ picture {
     }
 }
 
-.cards__item .item__icon {
+.cards__item .cards__icon {
     width: 100%;
     height: auto;
     margin: 0 0 50px 0;
@@ -591,10 +591,9 @@ picture {
     }
 }
 
-.block__text {
-    width: 100%;
-    height: auto;
+.about__textual-area {
     padding: 0 15px;
+    text-align: left;
 }
 
 .card__title {
@@ -640,11 +639,13 @@ picture {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    text-align: left;
     width: 50%;
-    padding: 15px 50px;
+    padding: 0 50px;
+    margin: 15px 0;
 
     @media (max-width: 530px) {
-        padding: 15px;
+        padding: 0 15px;
     }
 }
 
@@ -672,9 +673,10 @@ picture {
 @media (max-width: 770px) {
 
     .discount__img,
-    .discount__textual {
+    .discount__textual-area {
         width: 100%;
         text-align: center;
+        align-items: center;
     }
 }
 
@@ -772,28 +774,9 @@ picture {
 
 // review block _____________________________________________________________________________________________
 
-.reviews {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    height: 100vh;
-    min-height: 600px;
-    position: relative;
-
-    @media (max-width: 770px) {
-        height: auto;
-    }
-}
-
 .reviews__title {
     color: #deb37e;
     margin: 0 0 25px 0;
-}
-
-.comment__description {
-    color: #3f3f3f;
-    font-weight: 600;
 }
 
 .reviews__description {
@@ -801,29 +784,25 @@ picture {
     margin: 0 0 50px 0;
     max-width: 100%;
     color: #3f3f3f;
+    text-align: left;
 }
 
-.comment {
-    position: relative;
-    z-index: 5;
-    padding-bottom: 50px;
+.comment__marks {
+    color: #3f3f3f;
+    font-size: 100px;
+    font-weight: 700;
 }
 
-.comment__block {
-    width: 100%;
-    text-align: center;
+.comment__description {
+    color: #3f3f3f;
+    font-size: 25px;
+    font-weight: 600;
+}
 
-    span {
-        font-size: 100px;
-        font-weight: 700;
-        font-style: italic;
-    }
-
-    .comment__name {
-        color: #3f3f3f;
-        font-size: 20px;
-        font-weight: 700;
-    }
+.comment__name {
+    color: #3f3f3f;
+    font-size: 20px;
+    font-weight: 800;
 }
 
 // email block _____________________________________________________________________________________________________
@@ -875,6 +854,7 @@ picture {
 
         @media (max-width: 770px) {
             border-radius: 50px;
+            margin: 0 0 10px;
         }
 
         @media (max-width: 580px) {
