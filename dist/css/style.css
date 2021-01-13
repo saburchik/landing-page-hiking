@@ -834,7 +834,7 @@ picture {
   text-align: center;
 }
 
-.email__sub {
+.subscribe {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -844,18 +844,10 @@ picture {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.email__title {
-  font-size: 75px;
-  margin: 0 0 70px;
-}
-
-.subscribe {
   width: 100%;
 }
 
-.subscribe input {
+.subscribe__input {
   font-size: 25px;
   width: 500px;
   background-color: #f6f6f6;
@@ -868,6 +860,15 @@ picture {
   font-weight: 400;
   font-family: 'Exo', sans-serif;
   outline: none;
+}
+
+.email__title {
+  font-size: 75px;
+  margin: 0 0 50px 0;
+}
+
+.email__description {
+  color: #605a55;
 }
 
 .email__button {
@@ -883,56 +884,50 @@ picture {
 }
 
 .footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: auto;
+  position: relative;
   background-color: #7f7770;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
+  padding: 200px 0 0;
 }
 
-.footer__wrapper {
-  width: 100%;
-  position: relative;
-  z-index: 5;
-  padding: 150px 0 75px;
-}
-
-.footer__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.footer__block {
+.footer__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0px -15px;
+  padding-bottom: 65px;
 }
 
-.footer__block:first-child {
-  width: 50%;
-}
-
-.footer__object {
+.footer__col {
   padding: 0 15px;
-  margin: 20px 0;
+}
+
+.footer__col--one {
+  -webkit-box-flex: 15;
+      -ms-flex: 15;
+          flex: 15;
+}
+
+.footer__col--two {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+}
+
+.footer__col--three {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+}
+
+.footer__col--four {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
 }
 
 .footer__item {
@@ -1024,26 +1019,6 @@ picture {
 }
 
 @media (max-width: 1160px) {
-  .footer__row {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-
-  .footer__block:first-child {
-    text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-
   .footer__icon {
     max-width: 100%;
     margin: 0 auto;
@@ -1071,6 +1046,16 @@ picture {
 @media (max-width: 990px) {
   .cards__item .cards__icon {
     margin: 0 0 30px 0;
+  }
+
+  .footer__col--one {
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+    width: 100%;
   }
 }
 
@@ -1151,11 +1136,6 @@ picture {
             align-items: center;
   }
 
-  .subscribe input {
-    border-radius: 50px;
-    margin: 0 0 10px;
-  }
-
   .subscribe {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1167,6 +1147,11 @@ picture {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+
+  .subscribe__input {
+    border-radius: 50px;
+    margin: 0 0 10px;
   }
 }
 
@@ -1191,24 +1176,24 @@ picture {
   }
 }
 
-@media (max-width: 680px) {
-  .footer__block:first-child {
-    width: 100%;
-  }
-}
-
 @media (max-width: 600px) {
-  .footer__block {
+  .footer__content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
   }
 }
 
 @media (max-width: 580px) {
-  .subscribe input {
+  .subscribe__input {
     width: 300px;
     font-size: 18px;
   }
