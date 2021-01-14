@@ -907,7 +907,16 @@ picture {
 }
 
 .footer__col {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
     padding: 0 15px;
+    margin: 20px 0;
+
+    @media (max-width: 990px) {
+        text-align: center;
+        align-items: center;
+    }
 }
 
 .footer__col--one {
@@ -917,6 +926,7 @@ picture {
         flex: none;
         order: 4;
         width: 100%;
+        align-items: center;
     }
 }
 
@@ -932,21 +942,13 @@ picture {
     flex: auto;
 }
 
-
-
-.footer__item {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-}
-
 .footer__title {
     font-weight: 400;
     margin: 0 0 30px 0;
 }
 
 .footer__description {
-    margin: 0 0 50px;
+    margin: 0 0 20px;
     font-size: 23px;
 }
 
@@ -964,45 +966,41 @@ picture {
     }
 }
 
-.footer__icon {
-    max-width: 300px;
+.footer__icons {
+    width: 100%;
+    max-width: 350px;
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
 
-    a {
-        margin: 15px;
-        background-color: #fff;
-        border-radius: 50%;
+    @media (max-width: 990px) {
+        justify-content: space-between;
+    }
+}
 
-        &:first-child {
-            margin-left: 0;
-        }
+.icon__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
 
-        &:last-child {
-            margin-right: 0;
-        }
-
-        &:hover {
-            background-color: #d4d3d2;
-        }
+    &:first-child {
+        margin-left: 0;
     }
 
-    .icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-
-        img {
-            width: 25px;
-            height: 25px;
-        }
+    &:last-child {
+        margin-right: 0;
     }
 
-    @media (max-width: 1160px) {
-        max-width: 100%;
-        margin: 0 auto;
+    &:hover {
+        background-color: #d4d3d2;
     }
+}
+
+.icon__image {
+    width: 25px;
+    height: 25px;
 }
