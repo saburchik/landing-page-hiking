@@ -120,10 +120,16 @@ picture {
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 5;
+    z-index: 1;
 }
 
 // LEAF/>
+
+.textual-area {
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
 
 // TITLE
 .title {
@@ -144,7 +150,6 @@ picture {
     font-weight: 400;
     letter-spacing: 2px;
     margin: 0 auto 50px;
-    // margin shouldn't be in the block of BEM methodology
     max-width: 75%;
 
     @media (max-width: 1100px) {
@@ -156,14 +161,15 @@ picture {
     }
 
     @media (max-width: 490px) {
-        font-size: 18px;
+        font-size: 17px;
         margin: 0 auto 40px;
         max-width: 100%;
     }
 }
 
-// block header ________________________________________________________________________________________________
-
+// ____________________
+// Section <<header/>>
+// ____________________
 .header {
     width: 100%;
     padding-top: 15px;
@@ -239,6 +245,11 @@ picture {
             left: 0;
             z-index: 1;
             transition: opacity 0.1s linear;
+
+            &:hover {
+                color: #d4d3d2;
+                text-decoration: underline;
+            }
         }
 
         &:hover {
@@ -300,6 +311,10 @@ picture {
         width: 100px;
         vertical-align: middle;
         padding: 5px;
+
+        @media (max-width: 770px) {
+            width: 200px;
+        }
     }
 
     .search-form__button {
@@ -314,6 +329,7 @@ picture {
 
     @media (max-width: 770px) {
         margin: 10px 20px;
+        width: 250px;
     }
 }
 
@@ -395,7 +411,9 @@ picture {
 }
 
 
-// block intro ________________________________________________________________________________________________________
+// ____________________
+// Section <<intro/>>
+// ____________________
 .intro {
     display: flex;
     flex-direction: column;
@@ -486,25 +504,13 @@ picture {
     max-width: 100%;
 }
 
-
-// block about ____________________________________________________________________________________________
+// ____________________
+// Section <<about/>>
+// ____________________
 .about {
     position: relative;
     background-color: #fff;
     height: auto;
-}
-
-.leaf-bg {
-    background-image: url("../img/Shadow_.png");
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
 }
 
 .about__content {
@@ -516,10 +522,9 @@ picture {
     z-index: 5;
 }
 
-.textual-area {
-    text-align: center;
-    position: relative;
-    z-index: 5;
+.about__textual-area {
+    padding: 0 15px;
+    text-align: left;
 }
 
 .about__title {
@@ -566,14 +571,6 @@ picture {
     height: auto;
     background-color: #7f7770;
 
-    .reviews & {
-        background-color: transparent;
-
-        @media (max-width: 770px) {
-            text-align: center;
-        }
-    }
-
     @media (max-width: 770px) {
         width: 100%;
         max-width: 410px;
@@ -581,7 +578,11 @@ picture {
     }
 }
 
-.cards__item .cards__icon {
+.cards__item--color {
+    background-color: #fff;
+}
+
+.cards__image {
     width: 100%;
     height: auto;
     margin: 0 0 50px 0;
@@ -589,11 +590,6 @@ picture {
     @media (max-width: 990px) {
         margin: 0 0 30px 0;
     }
-}
-
-.about__textual-area {
-    padding: 0 15px;
-    text-align: left;
 }
 
 .card__title {
@@ -606,8 +602,9 @@ picture {
     max-width: 100%;
 }
 
-// discount ______________________________________________________________________________________________________
-
+// ____________________
+// Section <<discount/>>
+// ____________________
 .discount__content {
     width: 100%;
     display: flex;
@@ -619,20 +616,20 @@ picture {
     }
 }
 
-.part-2 {
+.discount__content--second {
     flex-direction: row-reverse;
     background-color: #deb37e;
 }
 
-.discount__img {
+.discount__photo {
     width: 50%;
+}
 
-    img {
-        width: 100%;
-        height: 100vh;
-        min-height: 775px;
-        object-fit: cover;
-    }
+.discount__image {
+    width: 100%;
+    height: 100vh;
+    min-height: 775px;
+    object-fit: cover;
 }
 
 .discount__textual-area {
@@ -644,7 +641,7 @@ picture {
     padding: 0 50px;
     margin: 15px 0;
 
-    @media (max-width: 530px) {
+    @media (max-width: 990px) {
         padding: 0 15px;
     }
 }
@@ -652,6 +649,10 @@ picture {
 .discount__title {
     font-size: 60px;
     margin: 0 0 30px;
+
+    @media (max-width: 990px) {
+        font-size: 47px;
+    }
 }
 
 .discount__description {
@@ -672,7 +673,7 @@ picture {
 
 @media (max-width: 770px) {
 
-    .discount__img,
+    .discount__photo,
     .discount__textual-area {
         width: 100%;
         text-align: center;
@@ -680,7 +681,9 @@ picture {
     }
 }
 
-// mountains block________________________________________________________________________________________________
+// ______________________
+// Section <<mountains/>>
+// ______________________
 .mountains {
     display: flex;
     flex-direction: column;
@@ -689,18 +692,6 @@ picture {
     position: relative;
     background-color: #99928d;
     height: 870px;
-}
-
-.frame__fx {
-    width: 100%;
-    position: relative;
-    z-index: 5;
-}
-
-.frame__img {
-    width: 100%;
-    height: 100vh;
-    min-height: 600px;
 }
 
 .mountains__textual {
@@ -721,8 +712,9 @@ picture {
     color: #dbdbdb;
 }
 
-// block explore _________________________________________________________________________________________________________
-
+// ____________________
+// Section <<explore/>>
+// ____________________
 .explore {
     display: flex;
     flex-direction: column;
@@ -735,48 +727,62 @@ picture {
     background-size: cover;
     position: relative;
 
-    .explore__textual {
-        width: 100%;
-        text-align: right;
-        position: absolute;
-        z-index: 5;
-
-        @media (max-width: 775px) {
-            text-align: center;
-        }
-    }
-
-    .explore__title {
-        color: #deb37e;
-        font-size: 75px;
-        font-style: italic;
-        font-weight: 800;
-        text-shadow: 3px -5px 10px #d3d2cd;
-
-        span {
-            color: #54524f;
-        }
-
-        @media (max-width: 1000px) {
-            font-size: 57px;
-        }
-
-        @media (max-width: 775px) {
-            padding-top: 100px;
-            font-size: 48px;
-        }
-    }
-
     @media (max-width: 775px) {
         justify-content: end;
     }
 }
 
-// review block _____________________________________________________________________________________________
+.explore__textual-area {
+    text-align: right;
+
+    @media (max-width: 775px) {
+        text-align: center;
+    }
+}
+
+.explore__title,
+.explore__title--dark {
+    color: #deb37e;
+    font-size: 75px;
+    font-style: italic;
+    font-weight: 800;
+    text-shadow: 3px -5px 10px #d3d2cd;
+
+    @media (max-width: 1000px) {
+        font-size: 57px;
+    }
+
+    @media (max-width: 775px) {
+        font-size: 50px;
+    }
+}
+
+.explore__title--dark {
+    color: #54524f;
+}
+
+@media (max-width: 775px) {
+    .explore__title {
+        padding-top: 100px;
+    }
+}
+
+// ____________________
+// Section <<reviews/>>
+// ____________________
+.reviews {
+    position: relative;
+    z-index: 5;
+}
+
+.reviews__content {
+    margin: 50px 0 150px;
+}
 
 .reviews__title {
     color: #deb37e;
     margin: 0 0 25px 0;
+    text-align: left;
 }
 
 .reviews__description {
@@ -787,7 +793,7 @@ picture {
     text-align: left;
 }
 
-.comment__marks {
+.comment__mark {
     color: #3f3f3f;
     font-size: 100px;
     font-weight: 700;
@@ -805,8 +811,9 @@ picture {
     font-weight: 800;
 }
 
-// email block _____________________________________________________________________________________________________
-
+// __________________
+// Section <<email/>>
+// __________________
 .email {
     display: flex;
     flex-direction: column;
@@ -822,6 +829,15 @@ picture {
     position: absolute;
     z-index: 5;
     text-align: center;
+}
+
+.email__title {
+    font-size: 75px;
+    margin: 0 0 50px 0;
+}
+
+.email__description {
+    color: #605a55;
 }
 
 .subscribe {
@@ -848,7 +864,6 @@ picture {
     color: #868686;
     font-size: 25px;
     font-weight: 400;
-    font-family: 'Exo', sans-serif;
     outline: none;
 
     @media (max-width: 770px) {
@@ -860,15 +875,6 @@ picture {
         width: 300px;
         font-size: 18px;
     }
-}
-
-.email__title {
-    font-size: 75px;
-    margin: 0 0 50px 0;
-}
-
-.email__description {
-    color: #605a55;
 }
 
 .email__button {
@@ -883,8 +889,9 @@ picture {
     }
 }
 
-// block footer ____________________________________________________________________________________________________
-
+// ___________________
+// Section <<footer/>>
+// ___________________
 .footer {
     position: relative;
     background-color: #7f7770;
@@ -906,7 +913,7 @@ picture {
     }
 }
 
-.footer__col {
+.footer__row {
     display: flex;
     flex-direction: column;
     align-items: baseline;
@@ -919,7 +926,7 @@ picture {
     }
 }
 
-.footer__col--one {
+.footer__row--first {
     flex: 15;
 
     @media (max-width: 990px) {
@@ -930,15 +937,9 @@ picture {
     }
 }
 
-.footer__col--two {
-    flex: auto;
-}
-
-.footer__col--three {
-    flex: auto;
-}
-
-.footer__col--four {
+.footer__row--second,
+.footer__row--third,
+.footer__row--fourth {
     flex: auto;
 }
 
@@ -1001,6 +1002,5 @@ picture {
 }
 
 .icon__image {
-    width: 25px;
-    height: 25px;
+    height: 23px;
 }
