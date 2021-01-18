@@ -213,7 +213,7 @@ picture {
   z-index: 1000;
 }
 
-.header.fixed {
+.header--fixed {
   padding: 10px 0;
   background-color: #fff;
   -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
@@ -242,13 +242,13 @@ picture {
           align-items: center;
 }
 
-.menu .logo {
+.logo {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 75px;
           flex: 0 0 75px;
 }
 
-.menu .logo .logo__img {
+.logo .logo__img {
   max-width: 100%;
 }
 
@@ -262,7 +262,7 @@ picture {
   font-weight: 700;
 }
 
-.navigation .nav__link {
+.nav__link {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -279,7 +279,7 @@ picture {
   transition: color 0.1s linear;
 }
 
-.navigation .nav__link:after {
+.nav__link:after {
   content: "";
   width: 100%;
   height: 3px;
@@ -295,22 +295,22 @@ picture {
   transition: opacity 0.1s linear;
 }
 
-.navigation .nav__link:after:hover {
+.nav__link:after:hover {
   color: #d4d3d2;
   text-decoration: underline;
 }
 
-.navigation .nav__link:hover {
+.nav__link:hover {
   color: #c3bfbc;
 }
 
-.navigation .nav__link:hover:after,
-.navigation .nav__link.active:after {
+.nav__link:hover:after,
+.nav__link.active:after {
   opacity: 1;
   display: block;
 }
 
-.navigation .nav__link:active {
+.nav__link:active {
   color: #c3bfbc;
 }
 
@@ -342,7 +342,7 @@ picture {
   margin-left: 25px;
 }
 
-.search-form .search-form__input {
+.search-form__input {
   background-color: #c3bfbc;
   border: none;
   outline: none;
@@ -351,7 +351,7 @@ picture {
   padding: 5px;
 }
 
-.search-form .search-form__button {
+.search-form__button {
   background-color: #c3bfbc;
   outline: none;
   border: none;
@@ -360,8 +360,6 @@ picture {
   cursor: pointer;
   color: #68635f;
 }
-
-/* Nav toggle */
 
 .nav-toggle {
   display: none;
@@ -480,7 +478,7 @@ picture {
   z-index: 50;
 }
 
-.intro__content .intro__textual {
+.intro__textual {
   width: 50%;
 }
 
@@ -1072,12 +1070,6 @@ picture {
     padding: 10px 0;
   }
 
-  .navigation .nav__link {
-    display: block;
-    margin: 0;
-    padding: 10px 20px;
-  }
-
   .navigation {
     display: none;
     width: 100%;
@@ -1087,13 +1079,19 @@ picture {
     background-color: #fff;
   }
 
-  .search-form .search-form__input {
-    width: 200px;
+  .nav__link {
+    display: block;
+    margin: 0;
+    padding: 10px 20px;
   }
 
   .search-form {
     margin: 10px 20px;
     width: 250px;
+  }
+
+  .search-form__input {
+    width: 200px;
   }
 
   .nav-toggle {
@@ -1224,7 +1222,7 @@ picture {
 }
 
 @media (max-height: 568px) {
-  .menu .logo {
+  .logo {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 50px;
             flex: 0 0 50px;
